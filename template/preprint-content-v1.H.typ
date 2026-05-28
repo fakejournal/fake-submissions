@@ -95,18 +95,13 @@
   set par(leading: 0.6em, spacing: 0.6em, justify: true, first-line-indent: 2em)
 
   show heading: it => {
-    let dep = it.depth
-    let size = (7 - dep) * 1.5pt + 3.5pt
-    set par(first-line-indent: 0mm)
+    let intensity = (7 - it.depth)
+    let size = intensity * 1.5pt + 5.5pt
     set text(
-      font: __font_sans,
-      weight: 600,
       size: size,
     )
-    block[
-      #v(2 * size, weak: true)
+    block(sticky: true, above: 1.15 * size, below: 0.6 * size)[
       #it
-      #v(1 * size, weak: true)
     ]
   }
 

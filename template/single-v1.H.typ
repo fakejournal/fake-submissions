@@ -109,7 +109,7 @@
   block(width: 100%, spacing: 15mm, [
     #set text(font: __font_sans, size: 10pt)
     // *FAKE*
-    #box(image(height: 19pt, "/src/logo1-1.svg"))
+    #box(image(height: 19pt, "/_vi/logo1-1.svg"))
     #h(1fr)
     #dataobj.editor.obj_id
 

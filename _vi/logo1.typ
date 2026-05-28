@@ -19,6 +19,6 @@
 
 
 #let shcmd11133 = ```sh
-typst c src/logo1.typ "src/logo1-{0p}.svg" &&
-typst c src/logo1.typ "src/logo1-{0p}.png" --ppi 900
+typst c _vi/logo1.typ "_vi/logo1-{0p}.svg" &&
+typst c _vi/logo1.typ "_vi/logo1-{0p}.png" --ppi 900
 ```
