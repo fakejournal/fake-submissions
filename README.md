@@ -1,2 +1,6 @@
-# fake-submissions
-投稿审阅系统
+# Fake 期刊投稿审阅系统
+
+建设中……
+
+
+
