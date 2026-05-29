@@ -78,8 +78,8 @@ Previous researchers explored several approaches:
   [Author], [Year], [Approach], [Limitation],
   
   [Nguyen et al.], [2021], [Hierarchical routing], [High coordination overhead],
-  [Silva and Park], [2022], [Adaptive clustering], [Unstable under noise],
-  [Meyer Group], [2024], [Probabilistic mesh repair], [Energy intensive],
+  [Physhan], [2022], [Adaptive clustering], [Unstable under noise],
+  [Neruthes], [2024], [Probabilistic mesh repair], [Energy intensive],
   [Current Thesis], [2026], [Morphological adaptation], [Simulation-only validation],
 )
 
