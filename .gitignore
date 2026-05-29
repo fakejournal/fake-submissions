@@ -1,2 +1,3 @@
 _dist/
 nogit/
+_utils/deploy-*.sh
