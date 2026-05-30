@@ -1,3 +1,5 @@
 _dist/
 nogit/
 _utils/deploy-*.sh
+.env
+node_modules/

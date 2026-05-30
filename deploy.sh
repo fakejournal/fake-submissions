@@ -1,10 +1,28 @@
 #!/bin/bash
 
 
-realshpath="_utils/deploy-$USER-$HOSTNAME.sh"
+# realshpath="_utils/deploy-$USER-$HOSTNAME.sh"
 
-# echo "realshpath=$realshpath"
+# echo "$realshpath"
+# "$realshpath"
 
-echo "$realshpath"
 
-"$realshpath"
+
+
+
+
+
+### New code: Upload to Cloudflare R2
+
+
+
+### Step 1: Ask maintainer to grant you access to R2 bucket on Cloudflare.
+### Step 2: Generate your API token and save these in `.env` file.
+# export R2_ACCOUNT_ID=xxx
+# export R2_ACCESS_KEY_ID=xxx
+# export R2_SECRET_ACCESS_KEY=xxx
+
+source .env
+node _utils/r2syncup.mjs
+
+
