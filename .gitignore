@@ -3,3 +3,5 @@ nogit/
 _utils/deploy-*.sh
 .env
 node_modules/
+pub/*/*/*-raw.jpg
+_fontsdir/

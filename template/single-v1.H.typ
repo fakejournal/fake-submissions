@@ -3,6 +3,24 @@
 #let __font_sans = ("TeX Gyre Heros", "Noto Sans CJK SC")
 
 
+#let fake_brand_logo_main = [
+  #let titlewidth = 130mm
+  #block({
+    scale(x: titlewidth, y: titlewidth * 30%, reflow: true, box(text(
+      font: (
+        // "GFS Didot",
+        "Playfair Display",
+        "DM Serif Display",
+      ),
+      stroke: white + 0.008em,
+      tracking: -0.025em,
+      weight: 600,
+      [Fake],
+    )))
+  })
+]
+
+
 
 
 #let h_shrink(
@@ -109,7 +127,8 @@
   block(width: 100%, spacing: 15mm, [
     #set text(font: __font_sans, size: 10pt)
     // *FAKE*
-    #box(image(height: 19pt, "/_vi/logo1-1.svg"))
+    #box(image(height: 19pt, "/_vi/logo2-1.png"))
+    // #box(scale(y: 19pt, x: auto, reflow: true, box(fake_brand_logo_main)))
     #h(1fr)
     #dataobj.editor.obj_id
 
@@ -189,10 +208,19 @@
 }
 
 #let make_single(doc) = {
-  set page(paper: "a4", margin: (top: 15mm, bottom: 20mm, left: 15mm, right: 15mm), footer: [
-    #h(1fr)
-    #set text(size: 9pt, font: __font_sans, weight: 500)
-    #context counter(page).display()])
+  set page(
+    paper: "a4",
+    margin: (top: 15mm, bottom: 20mm, left: 15mm, right: 15mm),
+    footer: [
+      #set text(size: 9pt, font: __font_sans, weight: 500)
+      #context [
+        #let __isodd = calc.odd(counter(page).get().first())
+        #if __isodd { h(1fr) }
+        #counter(page).display()
+        #if not __isodd { h(1fr) }
+      ]
+    ],
+  )
   set text(font: __font_serif, size: 10pt)
   set par(leading: 0.6em, spacing: 0.6em, justify: true, first-line-indent: 2em)
   set table(inset: 4pt, stroke: 0.33pt + black.lighten(20%))
@@ -213,9 +241,9 @@
   }
 
   show columns: it => {
-    v(10pt, weak: false)
+    v(20pt, weak: false)
     it
-    v(10pt, weak: true)
+    v(20pt, weak: true)
   }
 
   doc

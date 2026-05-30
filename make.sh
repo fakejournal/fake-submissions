@@ -17,9 +17,20 @@ if (( $# > 1 )); then
 fi
 
 
+function _die() {
+	echo "$2"
+	exit "$1"
+}
+
 
 case $1 in
 	*.typ )
 		bash _utils/ntypstpro "$1"
+		;;
+	init )
+		command -v yarn > /dev/null 2>&1 || _die 1 "[ERROR] You must install 'yarn'."
+		yarn
+		bash _utils/fontsdep.sh i
+		rm -rf "_fontsdir/6deb0a88-1.422.zip.d/barlow-1.422/fonts/"{gx,ttf}
 		;;
 esac

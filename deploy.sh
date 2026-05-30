@@ -1,16 +1,6 @@
 #!/bin/bash
 
 
-# realshpath="_utils/deploy-$USER-$HOSTNAME.sh"
-
-# echo "$realshpath"
-# "$realshpath"
-
-
-
-
-
-
 
 ### New code: Upload to Cloudflare R2
 
