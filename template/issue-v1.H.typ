@@ -242,7 +242,7 @@
     // Part
     if obj.level == 1 {
       counter1 += 1
-      block(sticky: true, breakable: false, above: 12mm, below: 9pt, {
+      block(sticky: true, breakable: false, above: 12mm, below: 9pt, { // This block should snap to 15mm vertical quantization
         set par(leading: 0.44em, spacing: 0.5em)
         set text(size: 11pt, weight: 600, font: font_sans1)
         obj.title
@@ -264,8 +264,6 @@
           strong[#obj.page], [#obj.title],
           [],
           text(size: 9pt, fill: luma(55%))[
-            // #obj.raw_toml.author.map(item => item.full_name).join([, ]) \
-            // #obj.raw_toml.editor.obj_id
             _#obj.raw_toml.editor.obj_id;_~~
             #obj.raw_toml.author.map(item => item.full_name).join([, ])
           ],
