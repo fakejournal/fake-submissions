@@ -37,11 +37,24 @@
 #makeimg(white)
 
 
-// typst c _vi/logo2.typ "_vi/logo2-{0p}.svg" &&
+
+
+
+
+// How to build output artifacts:
+
 
 #let shcmd11133 = ```sh
+### BEGIN SCRIPT ###
 typst c _vi/logo2.typ "_vi/logo2-{0p}.png" --ppi 900
 for fn in 1 2; do
   magick "_vi/logo2-$fn.png" -trim +repage "_vi/logo2-$fn.png"
 done
+
+for fn in 1 2; do
+  vtracer --input "_vi/logo2-$fn.png" --output "_vi/logo2-$fn.svg" --mode spline --filter_speckle 0 --corner_threshold 0 --splice_threshold 0 --segment_length 4
+done
+
+
+### END SCRIPT ###
 ```
