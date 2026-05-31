@@ -26,6 +26,13 @@ function _die() {
 case $1 in
 	*.typ )
 		bash _utils/ntypstpro "$1"
+		pdfpath="_dist/$(dirname "$1")/$(basename -s .typ "$1" ).pdf"
+		echo "PDF path: $pdfpath"
+		bash "$0" "$pdfpath"
+		;;
+	_dist/database/*/_cover.pdf )
+		pdftoppm -png -singlefile "$1" "$1"
+		du "$(realpath "$1.png")"
 		;;
 	init )
 		command -v yarn > /dev/null 2>&1 || _die 1 "[ERROR] You must install 'yarn'."

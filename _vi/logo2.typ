@@ -28,6 +28,7 @@
       // stroke: fill_color + 0.008em,
       tracking: -0.025em,
       weight: 600,
+      fill: fill_color,
       [Fake],
     )))
   })
