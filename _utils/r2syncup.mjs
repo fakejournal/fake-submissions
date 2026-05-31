@@ -29,7 +29,7 @@ function getFiles(dir) {
 
 async function syncToR2() {
     const absoluteLocalDir = path.resolve(LOCAL_DIR);
-    const files = getFiles(absoluteLocalDir).filter(fn => fn.endsWith('.pdf') || fn.endsWith('/_cover.pdf.png'));
+    const files = getFiles(absoluteLocalDir).filter(fn => fn.endsWith('.pdf') || fn.endsWith('.pdf.png'));
 
     for (const filePath of files) {
         // Create the relative key name for R2 (e.g., "images/pic.png")

@@ -29,10 +29,26 @@ case $1 in
 		pdfpath="_dist/$(dirname "$1")/$(basename -s .typ "$1" ).pdf"
 		echo "PDF path: $pdfpath"
 		bash "$0" "$pdfpath"
+		case $1 in
+			pub/*/issue.typ )
+				echo "(HINT)  You may want to also run:  " bash _utils/hook_after_issue_build.sh "$(dirname "$1")"
+				;;
+		esac
 		;;
 	_dist/database/*/_cover.pdf )
-		pdftoppm -png -singlefile "$1" "$1"
-		du "$(realpath "$1.png")"
+		pdftoppm -r 150 -png -singlefile "$1" "$1"
+		du -h "$(realpath "$1.png")"
+		;;
+	_dist/pub/*/issue.pdf )
+		pdftoppm -r 100 -png -singlefile "$1" "$1"
+		du -h "$(realpath "$1.png")"
+		;;
+	wwwsrc/ )
+		echo "[INFO] Building website..."
+		find wwwsrc/sh -name "*.sh" | sort | while read -r script_path; do
+			bash "$script_path"
+		done
+		echo "(HINT)  You may want to also run:  " bash wwwsrc/cfwsdeploy.sh
 		;;
 	init )
 		command -v yarn > /dev/null 2>&1 || _die 1 "[ERROR] You must install 'yarn'."

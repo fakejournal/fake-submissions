@@ -1,0 +1,8 @@
+name = "fakejournalwebsitedemo"
+
+# main = "./index.js" # Optional: if you have custom routing code
+
+compatibility_date = "2026-05-05"
+
+
+assets = { directory = "../wwwdist" }

@@ -1,0 +1,17 @@
+[issue]
+issue_serial = "PRE(1)"
+issue_volume = "2022.01"
+subclass = ""
+editors = "Physhan|Neruthes"
+draft = false
+
+
+[[article]]
+path = "database/2022/2022.3170411"
+range_from = 5
+range_to = 6
+
+[[article]]
+path = "database/2022/2022.3170411"
+range_from = 8
+range_to = 9

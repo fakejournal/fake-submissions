@@ -5,3 +5,8 @@ _utils/deploy-*.sh
 node_modules/
 pub/*/*/*-raw.jpg
 _fontsdir/
+.tmp/
+.wrangler/
+
+wwwdist/
+wwwsrc/sh/templates

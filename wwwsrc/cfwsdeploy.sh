@@ -1,0 +1,3 @@
+cd wwwsrc || :
+
+wrangler deploy

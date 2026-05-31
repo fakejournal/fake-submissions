@@ -182,7 +182,7 @@
 
 
 #let use_article(ipath) = context {
-  pagebreak(weak: true, to: "odd")
+  pagebreak(weak: true)
   let info_obj = toml(ipath + "/info.toml")
   let page_num = here().page()
   state__alttoclist.update(arr => {
