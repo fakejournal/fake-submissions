@@ -1,6 +1,7 @@
 [issue]
 issue_serial = "PRE(1)"
 issue_volume = "2022.01"
+year = "2022"
 subclass = ""
 editors = "Physhan|Neruthes"
 draft = false

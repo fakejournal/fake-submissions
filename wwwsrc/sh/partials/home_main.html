@@ -1,0 +1,44 @@
+<div class="px-6 md:px-12">
+    <div class="mb-12">
+        <!-- <h1 class="text-3xl font-bold">Home</h1> -->
+    </div>
+    <div class="flex flex-col gap-5 lg:flex-row">
+        <div class="lg:w-130">
+            <div class="col-span-1">
+                <div class="text-lg sans font-bold leading-5 pb-2">
+                    Latest Issue
+                </div>
+                <a class="underline hover:text-blue-600 text-2xl" href="./issues/{{last.issue.issue_volume}}/">
+                    <div>
+                        <img src="https://artifacts.fakejournal.org/pub/{{last.issue.year}}/{{last.issue.issue_volume}}/issue.pdf.png" alt="" class="border-1 border-slate-200 hover:border-slate-400 hover:shadow-lg shadow-slate-200 rounded-md">
+                    </div>
+                    <div class="text-center text-md">{{last.issue.issue_volume}}</div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 lg:gap-5">
+            {{#list}}
+            <div class="" style="transition: all 180ms ease;">
+                <a class="block shrink" href="./{{editor.obj_id}}/">
+                    <div class="text-lg md:text-xl sans font-bold leading-5 md:leading-7 pb-2 underline">
+                        {{article.title}}
+                    </div>
+                    <div class="flex flex-wrap flex-col xl:flex-row xl:place-content-between items-start text-gray-600">
+                        <div class="">
+                            <span class="font-bold">
+                                {{editor.category_label}}
+                            </span>
+                            &nbsp;|&nbsp;
+                            {{editor.date_accept}}
+                        </div>
+                        <div>{{article.authors_simple}}</div>
+                        <!-- <div>{{editor.state}}</div> -->
+                    </div>
+                </a>
+            </div>
+            {{/list}}
+        </div>
+    </div>
+</div>

@@ -197,6 +197,14 @@
 
   include ipath + "/single.typ"
   pagebreak(weak: true)
+  // counter(heading).update(())
+  // --- OR ---
+  // We iterate all counters and reset them
+  // Define all element counters you want to clear
+  let targets = (heading, figure, math.equation)
+  for element in targets {
+    counter(element).update(())
+  }
 }
 
 
@@ -242,7 +250,8 @@
     // Part
     if obj.level == 1 {
       counter1 += 1
-      block(sticky: true, breakable: false, above: 12mm, below: 9pt, { // This block should snap to 15mm vertical quantization
+      block(sticky: true, breakable: false, above: 12mm, below: 9pt, {
+        // This block should snap to 15mm vertical quantization
         set par(leading: 0.44em, spacing: 0.5em)
         set text(size: 11pt, weight: 600, font: font_sans1)
         obj.title
