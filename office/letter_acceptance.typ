@@ -54,10 +54,6 @@ _Manuscript title_:
 
 #v(20mm)
 
-#par(lorem(300))
-#par(lorem(300))
-#par(lorem(300))
-#par(lorem(300))
 
 
 

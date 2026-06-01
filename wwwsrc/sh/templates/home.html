@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Fake - The Journal of Unverifiable Discoveries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+    html, body {
+        font-family: 'TeX Gyre Heros', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'Noto Sans CJK SC';
+    }
+
+    .serif {
+        font-family: 'TeX Gyre Termes', 'Nimbus Roman', 'Times New Roman', 'FreeSerif', 'Noto Serif', serif, 'Noto Serif CJK SC';
+    }
+
+    .sans-serif {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'Noto Sans CJK SC';
+    }
+
+    .monospace {
+        font-family: 'JetBrains Mono NL', 'Noto Sans Mono', 'TeX Gyre Cursor', monospace, 'Noto Sans CJK SC';
+    }
+</style>
+</head>
+
+<body>
+    <div class="app-topbar  w-full bg-white border-b-3 border-black py-0">
+    <header>
+        <div class="flex grow border-b-1 border-gray-400 px-6 md:px-12 py-5">
+            <img src="/pic/fakejournallogo-black.png" alt="Fake Journal Logo" class="h-8">
+
+        </div>
+        <style>
+            .nav__1780253378 a {
+                font-size: 1.1rem;
+                font-weight: bold;
+            }
+        </style>
+        <nav class="nav__1780253378  flex grow gap-4 px-6 md:px-12 py-5 items-start">
+            <a href="/">Home</a>
+            <a href="/issues/">Issues</a>
+            <a href="/articles/">Articles</a>
+            <a href="/submit/">Submit</a>
+        </nav>
+    </header>
+</div>
+<!-- <div style="height: 130px;"></div> -->
+<!-- <div class="md:hidden" style="height: 30px;"></div> -->
+    <div class="px-6 md:px-12">
+    <div class="mb-12">
+        <!-- <h1 class="text-3xl font-bold">Home</h1> -->
+    </div>
+
+    <!-- Featured -->
+    <div class="flex flex-col container mx-auto mb-20">
+        <div class="bg-slate-500">
+            <style>
+                .local--feature-splash-bg {
+                    background: #222530 url('{{featured.imgurl}}') scroll no-repeat center center;
+                    background-size: cover;
+                }
+
+                @media screen and (max-width: 800px) {
+                    .local--feature-splash-bg--inner {
+                        background-color: #222530aa;
+                    }
+                }
+                @media screen and (min-width: 800px) {
+                    .local--feature-splash-bg {
+                        background: #222530 url('{{featured.imgurl}}') scroll no-repeat center right;
+                        background-size: contain;
+                    }
+                }
+            </style>
+            <div class="local--feature-splash-bg" style="">
+                <div class="p-6 lg:p-12 text-white max-w-150 min-h-130 lg:min-h-120  local--feature-splash-bg--inner">
+                    <!-- Edit this node to change target -->
+                    <a href="{{featured.href}}">
+                        <h2 class="text-4xl m-0 pb-12 font-bold">
+                            {{featured.title}}
+                        </h2>
+                    </a>
+                    <aside class="m-0 pb-4">
+                        {{featured.desc}}
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 container mx-auto">
+        <!-- Main -->
+        <div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 lg:gap-12">
+            <!-- Show latest issue -->
+            <div class="flex flex-col border-b-1 border-gray-500 pb-2" style="transition: all 180ms ease;">
+                <div class="block grow flex flex-col">
+                    <img src="https://artifacts.fakejournal.org/pub/{{last.issue.year}}/{{last.issue.issue_volume}}/issue.pdf.png" alt="" class="border-1 border-gray-400 rounded-xs">
+                    <div class="grow"></div>
+                    <div class="h-5"></div>
+                    <a class="block bg-slate-600 text-white text-center text-xl font-medium p-3 rounded-sm" href="./issues/{{last.issue.issue_volume}}/">Read</a>
+                    <div class="flex shrink flex-wrap flex-col xl:flex-row xl:place-content-between items-start text-gray-600">
+                        <div class="">
+                            <div class="pt-4 pb-2">{{article.authors_simple}}</div>
+                            <span class="font-bold text-black">
+                                Latest Issue
+                            </span>
+                            |
+                            {{last.issue.issue_volume}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Begin articles list -->
+            {{#list}}
+            <div class="flex flex-col border-b-1 border-gray-500 pb-2" style="transition: all 180ms ease;">
+                <a class="block grow flex flex-col" href="./articles/{{editor.obj_id}}/">
+                    <div class="shrink text-lg md:text-xl sans font-bold leading-5 md:leading-7 pb-2 underline">
+                        {{article.title}}
+                    </div>
+                    <div class="grow"></div>
+                    <div class="flex shrink flex-wrap flex-col xl:flex-row xl:place-content-between items-start text-gray-600">
+                        <div class="">
+                            <div class="pt-4 pb-2">{{article.authors_simple}}</div>
+                            <span class="font-bold text-black">
+                                {{editor.category_label}}
+                            </span>
+                            |
+                            {{editor.date_accept}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{/list}}
+        </div>
+    </div>
+</div>
+    <div class="app-footer  mt-12 px-6 md:px-12 py-12">
+    <footer class="text-slate-500">
+        FOOTER
+    </footer>
+</div>
+</body>
+
+</html>
