@@ -14,13 +14,16 @@ find pub -type f -name pub.toml | sort -r | while read -r toml_path; do
 	fi
 done | head -n1 | xargs cat | tomlq | tee .tmp/lastissue.json
 
+tomlq . wwwsrc/featured.toml > .tmp/featured.json
 
 jq -n \
   --slurpfile list .tmp/articleslist.json \
   --slurpfile last .tmp/lastissue.json \
+  --slurpfile featured .tmp/featured.json \
   '{
     list: $list[0],
-    last: $last[0]
+    last: $last[0],
+    featured: $featured[0]
   }' \
   | tee .tmp/homedata.json
 
