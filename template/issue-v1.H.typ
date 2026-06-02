@@ -20,6 +20,7 @@
 
 #let docinit(doc) = {
   set page(paper: "a4", margin: 20mm)
+  set heading(bookmarked: false)
   show: ose-pic-init
   set text(
     font: font_sans1,

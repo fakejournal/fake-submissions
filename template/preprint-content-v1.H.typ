@@ -90,7 +90,9 @@
   set page(paper: "a4", margin: (top: 15mm, bottom: 20mm, left: 15mm, right: 15mm), footer: [
     #h(1fr)
     #set text(size: 9pt, font: __font_sans, weight: 500)
-    #context counter(page).display()])
+    #context counter(page).display()
+  ])
+  set heading(bookmarked: false)
   set text(font: ("TeX Gyre Heros",) + __font_sans, size: 12pt)
   set par(leading: 0.6em, spacing: 0.6em, justify: true, first-line-indent: 2em)
 

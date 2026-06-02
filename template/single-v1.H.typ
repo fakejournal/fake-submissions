@@ -221,6 +221,7 @@
       ]
     ],
   )
+  set heading(bookmarked: false)
   set text(font: __font_serif, size: 10pt)
   set par(leading: 0.6em, spacing: 0.6em, justify: true, first-line-indent: 2em)
   set table(inset: 4pt, stroke: 0.33pt + black.lighten(20%))
