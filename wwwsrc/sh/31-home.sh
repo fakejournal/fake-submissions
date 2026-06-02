@@ -12,7 +12,7 @@ find pub -type f -name pub.toml | sort -r | while read -r toml_path; do
 		echo "$toml_path"
 		break
 	fi
-done | head -n1 | xargs cat | tomlq | tee .tmp/lastissue.json
+done | head -n1 | xargs cat | tomlq > .tmp/lastissue.json
 
 tomlq . wwwsrc/featured.toml > .tmp/featured.json
 
@@ -24,7 +24,6 @@ jq -n \
     list: $list[0],
     last: $last[0],
     featured: $featured[0]
-  }' \
-  | tee .tmp/homedata.json
+  }' > .tmp/homedata.json
 
 mustache .tmp/homedata.json wwwsrc/sh/templates/home.html > wwwdist/index.html

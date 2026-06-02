@@ -6,6 +6,9 @@ subclass = ""
 editors = "Physhan|Neruthes"
 draft = false
 
+cover_story_title = """Martian Biosignatures: Indicators of life"""
+cover_story_id = """2022.1170411"""
+
 
 [[article]]
 path = "database/2022/2022.3170411"

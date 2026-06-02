@@ -14,7 +14,7 @@ if [ ! -d "$PARTIAL_DIR" ]; then
     exit 1
 fi
 
-echo "Processing files in '$PARTIAL_DIR'..."
+# echo "Processing files in '$PARTIAL_DIR'..."
 
 # Find all files in the partial directory
 find "$PARTIAL_DIR" -type f | while read -r filepath; do
@@ -35,7 +35,7 @@ find "$PARTIAL_DIR" -type f | while read -r filepath; do
     # If the filename was like "file.txt", this would become ".file"
     # If the filename was like "common.header.html", this would become ".common.header"
 
-    echo "  - Processing '$filename' -> JSON path: '$json_path'"
+    # echo "  - Processing '$filename' -> JSON path: '$json_path'"
 
     # Use jq to mount the content into output.json
     # We use a temporary file to store the updated JSON to avoid issues with in-place editing
@@ -49,8 +49,8 @@ find "$PARTIAL_DIR" -type f | while read -r filepath; do
         echo "Error: Failed to update '$OUTPUT_FILE' with content from '$filename'."
         # Optionally, you can exit here or continue to the next file
     fi
-    echo "Content of '$OUTPUT_FILE':"
-    cat "$OUTPUT_FILE"
+    # echo "Content of '$OUTPUT_FILE':"
+    # cat "$OUTPUT_FILE"
 done
 
 echo "Script finished. Output saved to '$OUTPUT_FILE'."

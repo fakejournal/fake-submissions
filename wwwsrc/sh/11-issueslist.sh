@@ -14,7 +14,7 @@ find pub -type f -name pub.toml | sort -r | while read -r toml_path; do
 		printf "$linetmpl" "year" "$(cut -d/ -f2 <<< "$toml_path")"
 		printf "$linetmpl" "issue_id" "$(cut -d/ -f3 <<< "$toml_path")"
 	fi
-done | tee .tmp/issueslist.toml
+done > .tmp/issueslist.toml
 
 
 

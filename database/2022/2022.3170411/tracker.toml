@@ -1,9 +1,38 @@
 [tracker]
-step = 2
+step = 5
+
+
 
 [[timeline]]
 author = "SYSTEM"
 date = "2022-05-01T20:42:39+00:00"
 note = """
 Thanks for submitting the manuscript. An editor will be assigned soon.
+
+Please subscribe to https://github.com/fakejournal/fake-submissions/issues/1 for progress.
+"""
+
+
+[[timeline]]
+author = "SYSTEM"
+date = "2022-05-02T20:42:39+00:00"
+note = """
+An editor has been assigned. Awaiting reviewer allocation and review opinion.
+"""
+
+[[timeline]]
+author = "Editor"
+date = "2022-05-02T20:42:39+00:00"
+note = """
+Review opinion: Minor Revision.
+
+Instructions from reviewer:
+
+- Specify what changes need to make here.
+- Lorem ipsum dolor sit amet.
+- Lorem ipsum dolor sit amet.
+- Lorem ipsum dolor sit amet.
+
+You may take these instructions to update your manuscript.
+You may also send the editor your counterarguments for instructions that you do not agree with.
 """
