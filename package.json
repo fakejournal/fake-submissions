@@ -1,12 +1,13 @@
 {
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1057.0",
+    "cheerio": "^1.2.0",
     "mime-types": "^3.0.2"
   },
   "fontsdep": {
     "dest": "_fontsdir",
     "list": [
-        "https://github.com/jpt/barlow/archive/refs/tags/1.422.zip"
+      "https://github.com/jpt/barlow/archive/refs/tags/1.422.zip"
     ]
-}
+  }
 }

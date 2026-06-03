@@ -21,7 +21,7 @@ for page_id in $SINGLE_PAGES; do
 		}' > "$MY_PARTIAL_OUTPUT_FILE"
 
 	### STEP 2: Render target HTML
-	outdir="wwwdist/$page_id"
+	outdir="wwwdist/prei18n/$page_id"
 	mkdir -p "$outdir"
 	mustache "$MY_PARTIAL_OUTPUT_FILE" wwwsrc/sh/templates/anysingle.html > "$outdir/index.html"
 done

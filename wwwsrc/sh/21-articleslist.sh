@@ -25,4 +25,5 @@ done
 # cat .tmp/articleslist.json
 # echo cat .tmp/articleslist.json
 
-mustache .tmp/articleslist.json wwwsrc/sh/templates/articleslist.html > wwwdist/articles/index.html
+mkdir -p wwwdist/prei18n/articles
+mustache .tmp/articleslist.json wwwsrc/sh/templates/articleslist.html > wwwdist/prei18n/articles/index.html

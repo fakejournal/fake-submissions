@@ -9,9 +9,9 @@ find database -name 'info.toml' | sort -r | while read -r toml_path; do
 	if [[ "$f_state" != NewManuscript ]]; then
 		(
 			obj_id="$(tomlq -r .editor.obj_id "$toml_path")"
-			mkdir -p wwwdist/articles/"$obj_id"
-			tomlq . "$toml_path" > wwwdist/articles/"$obj_id"/info.json
-			mustache wwwdist/articles/"$obj_id"/info.json wwwsrc/sh/templates/article.html > wwwdist/articles/"$obj_id"/index.html
+			mkdir -p wwwdist/prei18n/articles/"$obj_id"
+			tomlq . "$toml_path" > wwwdist/prei18n/articles/"$obj_id"/info.json
+			mustache wwwdist/prei18n/articles/"$obj_id"/info.json wwwsrc/sh/templates/article.html > wwwdist/prei18n/articles/"$obj_id"/index.html
 		) &
 	fi
 done

@@ -19,8 +19,8 @@ done > .tmp/issueslist.toml
 
 
 ### STEP: Finally build the website
-mkdir -p wwwdist/issues
-mustache <(tomlq . .tmp/issueslist.toml) wwwsrc/sh/templates/allissues.html > wwwdist/issues/index.html
+mkdir -p wwwdist/prei18n/issues
+mustache <(tomlq . .tmp/issueslist.toml) wwwsrc/sh/templates/allissues.html > wwwdist/prei18n/issues/index.html
 
 
 

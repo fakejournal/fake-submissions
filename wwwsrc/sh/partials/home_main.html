@@ -8,7 +8,7 @@
         <div class="bg-slate-500">
             <style>
                 .local--feature-splash-bg {
-                    background: #222530 url('{{featured.imgurl}}') scroll no-repeat center right;
+                    background: #222530 url('{{featured.en.imgurl}}') scroll no-repeat center right;
                     background-size: contain;
                 }
 
@@ -29,13 +29,15 @@
             <div class="local--feature-splash-bg grid lg:grid-cols-2" style="">
                 <div class="p-6 lg:p-12 text-white min-h-130 lg:min-h-120  local--feature-splash-bg--inner">
                     <!-- Edit this node to change target -->
-                    <a href="{{featured.href}}">
+                    <a attr-en-href="{{featured.en.href}}" attr-zh-href="{{featured.zh.href}}">
                         <h2 class="text-4xl m-0 pb-12 font-bold">
-                            {{featured.title}}
+                            <span i18n-for="en">{{featured.en.title}}</span>
+                            <span i18n-for="zh">{{featured.zh.title}}</span>
                         </h2>
                     </a>
                     <aside class="m-0 pb-4">
-                        {{featured.desc}}
+                        <span i18n-for="en">{{featured.en.desc}}</span>
+                        <span i18n-for="zh">{{featured.zh.desc}}</span>
                     </aside>
                 </div>
             </div>
@@ -55,8 +57,7 @@
                     <div class="flex shrink flex-wrap flex-col xl:flex-row xl:place-content-between items-start text-gray-600">
                         <div class="">
                             <div class="pt-4 pb-2">{{article.authors_simple}}</div>
-                            <span class="font-bold text-black">
-                                Latest Issue
+                            <span class="font-bold text-black" data-i18n="en:Latest Issue|zh:最新期刊">
                             </span>
                             |
                             {{last.issue.issue_volume}}

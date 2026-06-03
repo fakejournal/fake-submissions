@@ -145,21 +145,26 @@
         let width = (calc.sin(itr * 0.04500) + 2) / 3
         width += (calc.sin(itr * 0.04500 * 8) + 4) / 5 / 6
         width *= (1800 / 2 - 220)
-        __buffer += ```
-          <path d="M 2100,2970 m-220,0, m0,-@vertical h -@width" fill="none" stroke="#bbbbbb" stroke-width="2" />
-        ```
-          .text
-          .replace("@vertical", repr(vertical))
-          .replace("@width", repr(width))
+        __buffer += (
+          ```
+            <path d="M 2100,2970 m-220,0, m0,-@vertical h -@width" />
+          ```
+            .text
+            .replace("@vertical", repr(vertical))
+            .replace("@width", repr(width))
+            + "\n"
+        )
       }
       let svgxml = ```xml
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2100 2970">
-        @buffer
+        <g fill="none" stroke="currentColor" stroke-width="2">
+          @buffer
+        </g>
       </svg>
       ```
         .text
         .replace("@buffer", __buffer)
-      image(width: 210mm, height: 297mm, fit: "cover", bytes(svgxml))
+      image(width: 210mm, height: 297mm, fit: "cover", bytes(svgxml.replace("currentColor", "#bbbbbb")))
       pdf.attach("decobg01.svg", bytes(svgxml))
     })))
   })

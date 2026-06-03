@@ -26,4 +26,4 @@ jq -n \
     featured: $featured[0]
   }' > .tmp/homedata.json
 
-mustache .tmp/homedata.json wwwsrc/sh/templates/home.html > wwwdist/index.html
+mustache .tmp/homedata.json wwwsrc/sh/templates/home.html > wwwdist/prei18n/index.html

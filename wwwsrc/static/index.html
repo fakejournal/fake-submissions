@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1;url=/en/" id="metaredir">
+
+    <title>Fake Journal - The Journal of Unverifiable Discoveries</title>
+
+    <style>
+        html,
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'Noto Sans CJK SC', 'MiSans', 'OPPO Sans';
+            font-size: 17px;
+        }
+
+        body {
+            padding: 5rem;
+        }
+
+        section>div {
+            padding: 0.3em 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Redirecting...</h1>
+    <section>
+        <div><a href="/en/">English</a></div>
+        <div><a href="/zh/">简体中文</a></div>
+    </section>
+    <!-- Redirecting to <a href="/en/">Site Homepage</a>... -->
+    <noscript>
+        Not redirecting? Click the link above to go.
+    </noscript>
+    <script>
+        document.querySelector('#metaredir').remove();
+        if (navigator.language.startsWith('zh')) {
+            location.href = '/zh/';
+        } else {
+            location.href = '/en/';
+        }
+    </script>
+</body>
+
+</html>

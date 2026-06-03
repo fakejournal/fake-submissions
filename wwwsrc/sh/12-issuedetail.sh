@@ -4,19 +4,6 @@
 
 
 
-# function buildissuedetailpage() {
-# 	local toml_path="$1"
-# 	### TODO:
-# 	### List all articles at '.issue.article[]'
-# 	### In each article item, 'path' is like "database/2022/2022.3170411"
-# 	### get obj_id by `cut -d/ -f3 <<< $path`
-# 	### Find article metadata TOML at "$path/info.toml"
-# 	### Aggregate all these TOML
-# 	### Final issue-defining JSON should be like {pub: {}, info:[]} where pub is read from $toml_path and info[] is the list of parsed 'info.toml'
-# 	### Save the final JSON at "wwwdist/issues/$(dut -d/ -f3 <<< "$toml_path")/issue.json"
-# }
-
-
 
 function buildissuedetailpage() {
 	local toml_path="$1"
@@ -53,7 +40,7 @@ function buildissuedetailpage() {
 	local issue_id
 	issue_id="$(cut -d/ -f3 <<< "$toml_path")"
 
-	local outdir="wwwdist/issues/$issue_id"
+	local outdir="wwwdist/prei18n/issues/$issue_id"
 	mkdir -p "$outdir"
 
 	printf '%s\n' "$issue_json" > "$outdir/issue.json"

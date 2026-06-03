@@ -2,8 +2,8 @@
 
     <!-- breadcumb? -->
     <div class="text-sm py-4">
-        <a class="underline hover:text-blue-600" href="/">Home</a> /
-        <a class="underline hover:text-blue-600" href="../">Articles</a> /
+        <a class="underline hover:text-blue-600" href="../../" data-i18n="en:Home|zh:首页">Home</a> /
+        <a class="underline hover:text-blue-600" href="../" data-i18n="en:Articles|zh:所有文章">Articles</a> /
         <!-- {{editor.obj_id}} -->
     </div>
 
@@ -21,12 +21,12 @@
             </div> -->
             <div>{{article.authors_simple}}</div>
             <div>
-                State:
+                <span data-i18n="en:State|zh:状态">...</span>:
                 {{editor.state}}
             </div>
             <div class="my-8 border-b-1 border-slate-200"></div>
             <div>
-                <div data-for-state="final"><a class="inline-block text-center text-lg bg-blue-500 text-white px-2 py-1 rounded-md min-w-40" href="https://artifacts.fakejournal.org/database/{{editor.year}}/{{editor.obj_id}}/final.pdf">Get PDF</a></div>
+                <div data-for-state="final"><a class="inline-block text-center text-lg bg-blue-500 text-white px-2 py-1 rounded-md min-w-40" href="https://artifacts.fakejournal.org/database/{{editor.year}}/{{editor.obj_id}}/final.pdf" data-i18n="en:Read PDF|zh:阅读 PDF">Read PDF</a></div>
             </div>
 
             <!-- border -->
@@ -42,8 +42,8 @@
             <!-- border -->
             <div class="my-8 border-b-1 border-slate-200"></div>
 
-            <div>
-                <h2 class="text-xl font-bold my-4">Cite this article</h2>
+            <div class="hidden">
+                <h2 class="text-xl font-bold my-4" >Cite this article</h2>
                 <div>
                     <pre id="jsPreBibtex" class="monospace text-sm whitespace-pre-wrap"></pre>
                 </div>
