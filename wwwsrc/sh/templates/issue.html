@@ -8,188 +8,11 @@
     <title>{{pub.issue.issue_volume}} | Issues Archive | Fake Journal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<style>
-    html,
-    body {
-        font-family: 'TeX Gyre Heros', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'Noto Sans CJK SC';
-    }
-
-    .serif {
-        font-family: 'TeX Gyre Termes', 'Nimbus Roman', 'Times New Roman', 'FreeSerif', 'Noto Serif', serif, 'Noto Serif CJK SC';
-    }
-
-    .sans-serif {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'Noto Sans CJK SC';
-    }
-
-    .monospace {
-        font-family: 'JetBrains Mono NL', 'Noto Sans Mono', 'TeX Gyre Cursor', monospace, 'Noto Sans CJK SC';
-    }
-</style>
-
-
-<style>
-    /* Baseline resets and layout */
-    .StdSinglePageContent {
-        max-width: 800px;
-        padding: 100px 0 0;
-        margin: 0;
-        line-height: 1.6;
-        color: #1a1a1a;
-    }
-
-    /* Headings */
-    .StdSinglePageContent h1,
-    .StdSinglePageContent h2,
-    .StdSinglePageContent h3,
-    .StdSinglePageContent h4 {
-        font-weight: 700;
-        color: #111827;
-        margin-top: 1.5em;
-        margin-bottom: 0.5em;
-    }
-
-    .StdSinglePageContent h1 {
-        font-size: 2.25em;
-        border-bottom: 1px solid #e5e7eb;
-        padding-bottom: 0.3em;
-    }
-
-    .StdSinglePageContent h2 {
-        font-size: 1.5em;
-        border-bottom: 1px solid #e5e7eb;
-        padding-bottom: 0.3em;
-    }
-
-    .StdSinglePageContent h3 {
-        font-size: 1.25em;
-    }
-
-    .StdSinglePageContent h4 {
-        font-size: 1em;
-    }
-
-    /* Inline elements */
-    .StdSinglePageContent p {
-        margin-top: 0;
-        margin-bottom: 1em;
-    }
-
-    .StdSinglePageContent a {
-        text-decoration: underline;
-        color: #2563eb;
-        /* Classic blue link */
-        font-weight: 500;
-    }
-
-    .StdSinglePageContent a:hover {
-        color: #1d4ed8;
-    }
-
-    .StdSinglePageContent strong {
-        font-weight: 700;
-        color: #111827;
-    }
-
-    /* Lists */
-    .StdSinglePageContent ul,
-    .StdSinglePageContent ol {
-        margin-top: 0;
-        margin-bottom: 1em;
-        padding-left: 1.5em;
-    }
-
-    .StdSinglePageContent ul {
-        list-style-type: disc;
-    }
-
-    .StdSinglePageContent ol {
-        list-style-type: decimal;
-    }
-
-    .StdSinglePageContent li {
-        margin-top: 0.25em;
-        margin-bottom: 0.25em;
-    }
-
-    /* Blockquotes */
-    .StdSinglePageContent blockquote {
-        margin: 1em 0;
-        padding-left: 1em;
-        border-left: 4px solid #e5e7eb;
-        color: #4b5563;
-        font-style: italic;
-    }
-
-    /* Code Blocks & Inline Code */
-    .StdSinglePageContent code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        font-size: 0.875em;
-        background-color: #f3f4f6;
-        padding: 0.2em 0.4em;
-        border-radius: 0.25rem;
-        color: #eb5757;
-        /* Standard reddish inline code */
-    }
-
-    /* Prevents inline code background leaking into full pre blocks if your markdown parser nests them */
-    .StdSinglePageContent pre code {
-        background-color: transparent;
-        padding: 0;
-        border-radius: 0;
-        color: inherit;
-        font-size: inherit;
-    }
-
-    .StdSinglePageContent pre {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        background-color: #1f2937;
-        /* Dark theme for code blocks */
-        color: #f9fafb;
-        padding: 1em;
-        border-radius: 0.375rem;
-        overflow-x: auto;
-        margin: 1em 0;
-    }
-
-    /* Tables */
-    .StdSinglePageContent table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1em 0;
-    }
-
-    .StdSinglePageContent th,
-    .StdSinglePageContent td {
-        border: 1px solid #e5e7eb;
-        padding: 0.625em;
-        text-align: left;
-    }
-
-    .StdSinglePageContent th {
-        background-color: #f9fafb;
-        font-weight: 600;
-    }
-
-    /* Miscellaneous */
-    .StdSinglePageContent hr {
-        border: 0;
-        border-top: 1px solid #e5e7eb;
-        margin: 2em 0;
-    }
-
-    .StdSinglePageContent img {
-        max-width: 100%;
-        height: auto;
-        margin: 1em auto;
-        border-radius: 0.375rem;
-    }
-</style>
+<link rel="stylesheet" href="/css/generic.css">
 </head>
 
 <body>
-    <div class="app-topbar  w-full bg-white border-b-3 border-black py-0">
+    <div class="app-topbar fixed  w-full bg-white border-b-3 border-black py-0">
     <header>
         <div class="flex grow border-b-1 border-gray-400 px-6 md:px-12 py-5">
             <a href="/">
@@ -210,7 +33,7 @@
         </nav>
     </header>
 </div>
-<!-- <div style="height: 130px;"></div> -->
+<div style="height: 150px;"></div>
 <!-- <div class="md:hidden" style="height: 30px;"></div> -->
     <!-- <div>
     {{pub}}
@@ -244,7 +67,7 @@
             </div>
             <div class="my-8 border-b-1 border-slate-200"></div>
             <div>
-                <div data-for-state="final"><a class="inline-block text-center text-lg bg-blue-500 text-white px-2 py-1 rounded-md min-w-40" href="https://artifacts.fakejournal.org/pub/{{pub.issue.year}}/{{pub.issue.issue_volume}}/final.pdf">Get PDF</a></div>
+                <div data-for-state="final"><a class="inline-block text-center text-lg bg-blue-500 text-white px-2 py-1 rounded-md min-w-40" href="https://artifacts.fakejournal.org/pub/{{pub.issue.year}}/{{pub.issue.issue_volume}}/issue.pdf">Get PDF</a></div>
             </div>
 
             <!-- border -->
@@ -291,7 +114,7 @@
     <div class="h-90"></div>
 
 <div class="app-footer bg-gray-100 mt-16 px-6 md:px-12 py-32">
-    <footer class="text-gray-700">
+    <footer class="text-gray-700 container mx-auto">
         <style>
             .app-footer a:hover {
                 color: black;
@@ -311,6 +134,7 @@
                 <a href="/">Home</a>
                 <a href="/about/">About</a>
                 <a href="/submit/">Submission Guide</a>
+                <a href="/submit-terms/">Manuscript Submission Terms</a>
                 <a href="/privacy/">Privacy Policy</a>
             </div>
 

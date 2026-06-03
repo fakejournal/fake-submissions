@@ -2,14 +2,15 @@
     <!-- breadcumb? -->
     <div class="text-sm py-4">
         <a class="underline hover:text-blue-600" href="../">Home</a> /
-        
+
     </div>
 </div>
 
-
-<div class="container mx-auto">
-    <div class="StdSinglePageContent">
-        <h1>All Issues</h1>
+<div class="px-6">
+    <div class="container mx-auto">
+        <div class="StdSinglePageContent">
+            <h1>All Issues</h1>
+        </div>
     </div>
 </div>
 
@@ -17,8 +18,8 @@
     <!-- <div class="mb-12">
         <h1 class="text-3xl font-bold">All Issues</h1>
     </div> -->
-    <div>
-        <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 lg:gap-5 container mx-auto">
+    <div class="container mx-auto">
+        <div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-22 lg:gap-10">
             {{#issue}}
             <div class="col-span-1">
                 <a class="underline text-2xl" href="./{{issue_id}}/">
@@ -32,5 +33,3 @@
         </div>
     </div>
 </div>
-
-

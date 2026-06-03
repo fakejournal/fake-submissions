@@ -22,7 +22,7 @@ find database -name 'info.toml' | sort -r | while read -r toml_path; do
 	fi
 done
 
-cat .tmp/articleslist.json
-echo cat .tmp/articleslist.json
+# cat .tmp/articleslist.json
+# echo cat .tmp/articleslist.json
 
 mustache .tmp/articleslist.json wwwsrc/sh/templates/articleslist.html > wwwdist/articles/index.html

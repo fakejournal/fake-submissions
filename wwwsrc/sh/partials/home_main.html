@@ -8,24 +8,26 @@
         <div class="bg-slate-500">
             <style>
                 .local--feature-splash-bg {
-                    background: #222530 url('{{featured.imgurl}}') scroll no-repeat center center;
-                    background-size: cover;
+                    background: #222530 url('{{featured.imgurl}}') scroll no-repeat center right;
+                    background-size: contain;
+                }
+
+                .local--feature-splash-bg--inner {
+                    background-color: #222530;
                 }
 
                 @media screen and (max-width: 800px) {
+                    .local--feature-splash-bg {
+                        background-size: cover;
+                    }
+
                     .local--feature-splash-bg--inner {
                         background-color: #222530aa;
                     }
                 }
-                @media screen and (min-width: 800px) {
-                    .local--feature-splash-bg {
-                        background: #222530 url('{{featured.imgurl}}') scroll no-repeat center right;
-                        background-size: contain;
-                    }
-                }
             </style>
-            <div class="local--feature-splash-bg" style="">
-                <div class="p-6 lg:p-12 text-white max-w-150 min-h-130 lg:min-h-120  local--feature-splash-bg--inner">
+            <div class="local--feature-splash-bg grid lg:grid-cols-2" style="">
+                <div class="p-6 lg:p-12 text-white min-h-130 lg:min-h-120  local--feature-splash-bg--inner">
                     <!-- Edit this node to change target -->
                     <a href="{{featured.href}}">
                         <h2 class="text-4xl m-0 pb-12 font-bold">
@@ -42,7 +44,7 @@
 
     <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 container mx-auto">
         <!-- Main -->
-        <div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 lg:gap-12">
+        <div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-22 lg:gap-10">
             <!-- Show latest issue -->
             <div class="flex flex-col border-b-1 border-gray-500 pb-2" style="transition: all 180ms ease;">
                 <div class="block grow flex flex-col">
