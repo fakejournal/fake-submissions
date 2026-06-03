@@ -1,6 +1,8 @@
-[en]
+imgurl = """https://images.unsplash.com/photo-1613451411927-49444b8f3f2f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZvb3R8ZW58MHx8MHx8fDI%3D"""
 
-imgurl = """https://images.unsplash.com/photo-1716881139357-ddcb2f52940c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmVidWxhfGVufDB8MHwwfHx8Mg%3D%3D"""
+
+[en]
+href = "/en/submit/"
 title = """
 Fabrication of Non-Existent Control Cohorts Found Analgesic for Reviewer-Induced Temporary Foot Damage
 """
@@ -9,15 +11,10 @@ desc = """
 Blind peer review frequently inflicts severe Temporary Foot Damage (TFD) when authors are forced to shoot their own methodologies in the foot to appease reviewers. This trial demonstrates that fabricating fictional control groups and aggressively p-hacking the remaining variables provides powerful trauma relief. Authors seeking clinical catharsis are urged to submit their most flawlessly structured, fraudulent control data to our Peer Review Theatre.
 """
 
-href = "/en/submit/"
-
-
-
 
 
 [zh]
-
-imgurl = """https://images.unsplash.com/photo-1716881139357-ddcb2f52940c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmVidWxhfGVufDB8MHwwfHx8Mg%3D%3D"""
+href = "/zh/submit/"
 title = """
 研究发现，针对评审员造成的暂时性足部损伤，虚构的对照组被认定具有镇痛作用
 """
@@ -26,5 +23,4 @@ desc = """
 Blind peer review frequently inflicts severe Temporary Foot Damage (TFD) when authors are forced to shoot their own methodologies in the foot to appease reviewers. This trial demonstrates that fabricating fictional control groups and aggressively p-hacking the remaining variables provides powerful trauma relief. Authors seeking clinical catharsis are urged to submit their most flawlessly structured, fraudulent control data to our Peer Review Theatre.
 """
 
-href = "/zh/submit/"
 
