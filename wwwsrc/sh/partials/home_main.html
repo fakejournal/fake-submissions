@@ -7,9 +7,9 @@
     <div class="flex flex-col container mx-auto mb-20">
         <div class="bg-slate-500">
             <style>
-                .local--feature-splash-bg {
-                    background: #222530 url('{{featured.imgurl}}') scroll no-repeat center right;
-                    background-size: contain;
+                .local--feature-splash-bg-innerRight {
+                    background: #222530 url('{{featured.imgurl}}') scroll no-repeat center center;
+                    background-size: cover;
                 }
 
                 .local--feature-splash-bg--inner {
@@ -18,16 +18,21 @@
 
                 @media screen and (max-width: 800px) {
                     .local--feature-splash-bg {
-                        background-size: cover;
+                        background: #222530 url('{{featured.imgurl}}') scroll no-repeat center right;
+                        background-size: contain;
                     }
 
                     .local--feature-splash-bg--inner {
                         background-color: #222530aa;
                     }
+
+                    .local--feature-splash-bg-innerRight {
+                        display: none;
+                    }
                 }
             </style>
             <div class="local--feature-splash-bg grid lg:grid-cols-2" style="">
-                <div class="p-6 lg:p-12 text-white min-h-130 lg:min-h-120  local--feature-splash-bg--inner">
+                <div class="p-6 lg:p-12 text-white min-w-0 min-h-130 lg:min-h-120  local--feature-splash-bg--inner">
                     <!-- Edit this node to change target -->
                     <a attr-en-href="{{featured.en.href}}" attr-zh-href="{{featured.zh.href}}">
                         <h2 class="text-4xl m-0 pb-12 font-bold">
@@ -40,6 +45,7 @@
                         <span i18n-for="zh">{{featured.zh.desc}}</span>
                     </aside>
                 </div>
+                <div class="local--feature-splash-bg-innerRight  grow"></div>
             </div>
         </div>
     </div>
