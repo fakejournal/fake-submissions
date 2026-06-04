@@ -14,37 +14,49 @@
 
 <body>
     <div class="app-topbar fixed  w-full bg-white border-b-3 border-black py-0">
-    <header>
-        <div class="flex grow border-b-1 border-gray-400 px-6 md:px-12 py-5">
-            <a attr-en-href="/en/" attr-zh-href="/zh/">
-                <img src="/pic/fakejournallogo-black.png" alt="Fake Journal Logo" class="h-8">
-            </a>
+    <header class="">
+        <div class="px-6">
+            <div class="container mx-auto py-5">
+                <div class="flex grow ">
+                    <a attr-en-href="/en/" attr-zh-href="/zh/">
+                        <img src="/pic/fakejournallogo-black.png" alt="Fake Journal Logo" class="h-8">
+                    </a>
+                </div>
+            </div>
         </div>
+
+        <div class="border-b-1 border-gray-400"></div>
+
         <style>
             .nav__1780253378 a {
                 font-size: 1.1rem;
                 font-weight: bold;
             }
         </style>
-        <nav i18n-for="en" class="nav__1780253378  flex grow gap-4 px-6 md:px-12 py-5 items-start">
-            <a href="/en/">Home</a>
-            <a href="/en/issues/">Issues</a>
-            <a href="/en/articles/">Articles</a>
-            <a href="/en/submit/">Submit</a>
-        </nav>
-        <nav i18n-for="zh" class="nav__1780253378  flex grow gap-4 px-6 md:px-12 py-5 items-start">
-            <a href="/zh/">首页</a>
-            <a href="/zh/issues/">期刊</a>
-            <a href="/zh/articles/">文章</a>
-            <a href="/zh/submit/">投稿</a>
-        </nav>
+        <div class="px-6">
+            <div class="container mx-auto">
+                <nav i18n-for="en" class="nav__1780253378  flex grow gap-4  py-5 items-start">
+                    <a href="/en/">Home</a>
+                    <a href="/en/issues/">Issues</a>
+                    <a href="/en/articles/">Articles</a>
+                    <a href="/en/submit/">Submit</a>
+                </nav>
+                <nav i18n-for="zh" class="nav__1780253378  flex grow gap-4  py-5 items-start">
+                    <a href="/zh/">首页</a>
+                    <a href="/zh/issues/">期刊</a>
+                    <a href="/zh/articles/">文章</a>
+                    <a href="/zh/submit/">投稿</a>
+                </nav>
+            </div>
+        </div>
     </header>
 </div>
+
 <div style="height: 150px;"></div>
 <!-- <div class="md:hidden" style="height: 30px;"></div> -->
     <div class="px-6 md:px-12">
     <!-- breadcumb? -->
-    <div class="text-sm py-4">
+    <div class="container mx-auto text-sm py-4">
         <a class="underline hover:text-blue-600" href="../" data-i18n="en:Home|zh:首页">Home</a> /
 
     </div>
