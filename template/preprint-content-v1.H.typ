@@ -9,17 +9,17 @@
     size: 15pt,
     font: __font_sans,
     weight: 600,
-    fill: gray.transparentize(55%),
+    fill: blue.transparentize(5%),
   )[WORKING MANUSCRIPT])
-
+  
   let dataobj = input_toml
   set text(number-width: "tabular")
   set par(first-line-indent: 0em)
-
+  
   block(width: 100%, spacing: 15mm, [
     #set text(font: __font_sans, size: 10pt)
   ])
-
+  
   block(width: 100%, spacing: 10mm, [
     // 1. Article Title
     #block(width: 70%)[
@@ -32,7 +32,7 @@
       #text(size: 16pt, weight: 700, font: __font_sans, (__realTitle))
     ]
     #v(4mm)
-
+    
     // 2. Authors Row (Fixed with unified paragraph and non-breaking boxes)
     #par(leading: 0.65em, [
       #set text(font: __font_sans)
@@ -43,11 +43,15 @@
             // Keeping the name and its superscripts welded together in a single box
             box([
               #text(size: 11pt, weight: 500, auth.full_name)
-              #super(text(fill: gray.darken(40%), {
-                auth.affiliations.map(str).join(",")
-              }))
-              #if auth.corresponding == true [
-                #super(text(fill: blue.darken(40%), "*"))
+              // Only render affiliation superscripts if the key exists
+              #if "affiliations" in auth [
+                #super(text(fill: gray.darken(40%), {
+                  auth.affiliations.map(str).join(",")
+                }))
+              ]
+              // Safely check for corresponding status without crashing if the key is missing
+              #if auth.at("corresponding", default: false) == true [
+                #(text(fill: blue.darken(40%), "*"))
               ]
             ])
           })
@@ -55,10 +59,11 @@
       )
     ])
     // #v(6mm)
-
+    
     // 3. Affiliations Block
     #block(width: 100%, {
-      let aff_dict = dataobj.affiliations
+      // let aff_dict = dataobj.affiliations
+      let aff_dict = dataobj.at("affiliations", default: (:))
       for (key, aff) in aff_dict [
         #text(size: 9pt, fill: gray.darken(70%), [
           #super(key) #aff.organization, #aff.city, #aff.country
@@ -67,7 +72,7 @@
       ]
     })
     // #v(5mm)
-
+    
     // 4. Modern minimalist separator accent
     // #line(length: 100%, stroke: 0.5pt + gray.lighten(40%))
   ])
@@ -82,7 +87,7 @@
 
 
 #let enable_heading_numbering(doc) = {
-  set heading(numbering: "1.1.1.1.1.1    ")
+  set heading(numbering: "1.1.1.1.1.1        ")
   doc
 }
 
@@ -93,25 +98,25 @@
     #context counter(page).display()
   ])
   set heading(bookmarked: false)
-  set text(font: ("TeX Gyre Heros",) + __font_sans, size: 12pt)
-  set par(leading: 0.6em, spacing: 0.6em, justify: true, first-line-indent: 2em)
-
+  set text(font: ("TeX Gyre Heros",) + __font_sans, size: 13pt)
+  set par(leading: 0.7em, spacing: 1.0em, justify: true, first-line-indent: 0em)
+  
   show heading: it => {
     let intensity = (7 - it.depth)
-    let size = intensity * 1.5pt + 5.5pt
+    let size = intensity * 1.8pt + 6.5pt
     set text(
       size: size,
     )
-    block(sticky: true, above: 1.15 * size, below: 0.6 * size)[
+    block(sticky: true, above: 1.5 * size, below: 0.96 * size)[
       #it
     ]
   }
-
+  
   show columns: it => {
     v(10pt, weak: false)
     it
     v(10pt, weak: true)
   }
-
+  
   doc
 }

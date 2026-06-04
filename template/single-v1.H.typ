@@ -1,3 +1,7 @@
+// =============================================================
+// An editor may use this to build single article PDF
+// =============================================================
+
 #let fake__brand_color = rgb("#FFD390")
 #let __font_serif = ("Libertinus Serif", "TeX Gyre Termes", "Noto Serif CJK SC")
 #let __font_sans = ("TeX Gyre Heros", "Noto Sans CJK SC")
