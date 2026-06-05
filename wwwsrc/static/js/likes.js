@@ -77,16 +77,17 @@ class OidcHandler {
             console.log('cached_intention', cached_intention);
             if (cached_intention) {
                 if (cached_intention.departure_url) {
-                    // window.history.replaceState({}, document.title, cached_intention.departure_url);
+                    // Bug reports indicate weird infinite redirection loop in Microsoft Edge on Windows.
+                    // But I cannot reproduce it in Microsoft Edge on my Gentoo machine. Why?
                     location.href = cached_intention.departure_url;
-                }
-            }
-
+                };
+            };
+            // As the departure_url approach is problematic, we temporarily fallback to the old way and debug later.
             // Standard URL sanitation: Strips query fields/hashes, retaining clean base route
             // const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
             // window.history.replaceState({}, document.title, cleanUrl);
         };
-    }
+    };
 
 
     // --- 2. Authentication Flow Initiation ---
