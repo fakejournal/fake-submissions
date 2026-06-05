@@ -5,6 +5,7 @@ about
 submit
 submit-terms
 privacy
+me
 "
 
 

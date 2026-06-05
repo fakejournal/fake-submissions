@@ -1,0 +1,37 @@
+<script>
+    function userInfoPageInitiateLogin() {
+        OidcHandler.initiateAuth0Login();
+    };
+    function userInfoPageLogout() {
+        localStorage.clear();
+        location.reload();
+    };
+    window.__is_user_self_profile_page = true;
+    window.addEventListener('load', async function () {
+        try {
+            window.reallyRenderUserLikesListIntoDom()
+        } catch (err) {
+        };
+    });
+</script>
+
+
+
+
+<h1 i18n-for="en">My Account</h1>
+<h1 i18n-for="zh">我的账号</h1>
+
+
+<div id="jsUserInfoWidget">
+</div>
+
+<div id="jsUserLikesList">
+    <h2 i18n-for="en">Likes</h2>
+    <h2 i18n-for="zh">赞过的文章</h2>
+    <div id="jsUserLikesListInner">
+    </div>
+</div>
+
+<div id="jsUserPagePanelPleaseLogin">
+    <button class="cursor-pointer inlin-block text-center text-lg bg-slate-600 text-white px-2 py-1 rounded-md min-w-40" onclick="userInfoPageInitiateLogin()">Login</button>
+</div>

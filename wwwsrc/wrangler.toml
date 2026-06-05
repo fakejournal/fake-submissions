@@ -1,8 +1,10 @@
 name = "fakejournalwebsitedemo"
-
-# main = "./index.js" # Optional: if you have custom routing code
+main = "./src/index.js"
 
 compatibility_date = "2026-05-05"
-
-
 assets = { directory = "../wwwdist" }
+
+[[d1_databases]]
+binding = "DB" # 对应代码中的 env.DB
+database_name = "fakejournalmainsitetmp"
+database_id = "54df9537-5320-44cc-9037-e9fda809b523"

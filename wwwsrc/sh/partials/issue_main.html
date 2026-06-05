@@ -36,7 +36,7 @@
                         <!-- List of articles -->
                         <!-- Keep in synchronization with 'articleslist_main.html' -->
                         {{#info}}
-                            <div class="max-w-200 border-b-1 border-gray-300 hover:border-gray-500" style="transition: all 180ms ease;">
+                            <div class="max-w-200 border-b-1 border-gray-300" style="transition: all 180ms ease;">
                                 <a class="block shrink py-4" href="../../articles/{{editor.obj_id}}/">
                                     <div class="text-lg sans font-bold leading-5 pb-2">
                                         {{article.title}}
@@ -47,7 +47,9 @@
                                             &nbsp;&nbsp;&nbsp;
                                             {{article.authors_simple}}
                                         </div>
-                                        <div>{{editor.state}}</div>
+                                        <!-- <div>{{editor.state}}</div> -->
+                                        <!-- Show likes count instead of state -->
+                                        <div class="jsArticleSummaryShowLikesCountWidget" data-objid="{{editor.obj_id}}"></div>
                                     </div>
                                 </a>
                             </div>

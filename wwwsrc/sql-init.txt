@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS user_likes (
+    user_id TEXT NOT NULL,
+    obj_id TEXT NOT NULL,
+    created_at INTEGER NOT NULL DEFAULT (unixepoch()),
+
+    PRIMARY KEY (user_id, obj_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_user_likes_user_id ON user_likes(user_id);
+CREATE INDEX IF NOT EXISTS idx_user_likes_obj_id ON user_likes(obj_id);

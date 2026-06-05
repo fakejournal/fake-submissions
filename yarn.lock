@@ -437,6 +437,11 @@
     "@smithy/util-buffer-from" "^2.2.0"
     tslib "^2.6.2"
 
+"@tsndr/cloudflare-worker-jwt@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@tsndr/cloudflare-worker-jwt/-/cloudflare-worker-jwt-3.2.1.tgz#6ecbb35fcad93e73558831996406cbac768ef08e"
+  integrity sha512-1AfDEgu7DTbU0sXDSOKh4D5t7+RJ0dIRRaDmoX3LFeW0AxQdunuqTQ7AVGwNJqOnxrbxiruyvX01cf9HHqEvXQ==
+
 boolbase@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
@@ -579,6 +584,11 @@ iconv-lite@0.6.3, iconv-lite@^0.6.3:
   integrity sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==
   dependencies:
     safer-buffer ">= 2.1.2 < 3.0.0"
+
+jose@^6.2.3:
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-6.2.3.tgz#0975197ad973251221c658a3cddc4b951a250c2d"
+  integrity sha512-YYVDInQKFJfR/xa3ojUTl8c2KoTwiL1R5Wg9YCydwH0x0B9grbzlg5HC7mMjCtUJjbQ/YnGEZIhI5tCgfTb4Hw==
 
 mime-db@^1.54.0:
   version "1.54.0"
