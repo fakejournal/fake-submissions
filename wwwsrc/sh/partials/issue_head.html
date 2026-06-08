@@ -1,2 +1,15 @@
 <title i18n-for="en">{{pub.issue.issue_volume}} | Issues Archive | Fake Journal</title>
 <title i18n-for="zh">{{pub.issue.issue_volume}} | 所有期刊 | Fake Journal</title>
+
+
+<!-- Core OpenGraph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Fake Journal" />
+
+
+<meta property="og:title" attr-en-content="Issue {{pub.issue.issue_volume}}" attr-zh-content="期刊 {{pub.issue.issue_volume}}" />
+<meta property="og:description" attr-en-content="Read Fake Journal Issue {{pub.issue.issue_volume}}. Featuring the cover story \" {{pub.issue.cover_story_title}}\" and the complete table of contents for latest articles." attr-zh-content="阅读 Fake Journal 期刊 {{pub.issue.issue_volume}}。包含封面故事《{{pub.issue.cover_story_title}}》以及最新收录的学术文章目录。" />
+
+<!-- Dynamic Media and URL Assets -->
+<meta property="og:image" content="https://artifacts.fakejournal.org/pub/{{pub.issue.year}}/{{pub.issue.issue_volume}}/issue.pdf.png" />
+<meta property="og:image:alt" content="Issue {{pub.issue.issue_volume}} Cover" />

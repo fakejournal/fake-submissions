@@ -1,2 +1,23 @@
 <title i18n-for="en">{{editor.obj_id}} - {{article.title}} | Articles Archive | Fake Journal</title>
 <title i18n-for="zh">{{editor.obj_id}} - {{article.title}} | 所有文章 | Fake Journal</title>
+
+
+
+<meta property="og:title" content="{{article.title}}" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{article.abstract}}" />
+
+<meta property="og:url" 
+    attr-en-content="https://fakejournal.org/en/articles/{{{editor.obj_id}}}/"
+    attr-zh-content="https://fakejournal.org/zh/articles/{{{editor.obj_id}}}/"
+/>
+
+<meta property="og:site_name" content="Fake Journal" />
+
+<meta property="article:author" content="{{article.authors_simple}}" />
+
+<meta property="article:published_time" content="{{editor.date_accept}}" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{article.title}}" />
+<meta name="twitter:description" content="{{article.abstract}}" />

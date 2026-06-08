@@ -68,7 +68,7 @@ class OidcHandler {
         const idToken = urlParams.get('id_token') || hashParams.get('id_token') ||
             urlParams.get('access_token') || hashParams.get('access_token');
 
-        console.log('idToken', idToken);
+        console.log('(handleCallback) idToken is token to be not set', idToken);
         if (idToken) {
             localStorage.setItem("auth0_id_token", idToken);
             console.log("Token intercepted and committed to localStorage.");
@@ -365,7 +365,8 @@ window.addEventListener('load', function () {
                         OidcHandler.initiateAuth0Login({ action: 'like_article' });
                         return;
                     }
-                    window.alert(`Something happened.`);
+                    // window.alert(`Something happened.`);
+                    console.log(apicall);
                 } else {
                     state.is_liked = apicall.result.status === 'liked'; // Use server answer
                 };
