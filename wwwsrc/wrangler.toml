@@ -1,4 +1,5 @@
-name = "fakejournalwebsitedemo"
+account_id = "6dc2ede68aff1ac4f25aecdab3b62a4c"
+name = "fakejournal"
 main = "./src/index.js"
 
 compatibility_date = "2026-05-05"
@@ -6,5 +7,5 @@ assets = { directory = "../wwwdist" }
 
 [[d1_databases]]
 binding = "DB" # 对应代码中的 env.DB
-database_name = "fakejournalmainsitetmp"
-database_id = "54df9537-5320-44cc-9037-e9fda809b523"
+database_name = "fakejournalmain_db"
+database_id = "131e1713-5bb9-4acd-9ac8-7b18fa0a133e"
