@@ -1,9 +1,11 @@
 #!/bin/bash
 
+sleep 1
+
 for lang in en zh; do
-	rsync -aupx wwwdist/prei18n/ "wwwdist/$lang/" &
+	rsync -aupx wwwdist/prei18n/ "wwwdist/$lang/"
 done
-wait
+
 
 
 rm -r wwwdist/prei18n

@@ -28,7 +28,8 @@
             'Accepted',
             'Published',
         ];
-        const current_step = parseInt('{{tracker.step}}') - 1;
+        let current_step = parseInt('{{tracker.step}}') - 1;
+        current_step = Math.min(current_step, all_steps_list.length - 1);
     </script>
 </head>
 

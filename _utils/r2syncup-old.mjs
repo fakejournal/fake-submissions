@@ -2,7 +2,6 @@ import { S3Client, HeadObjectCommand, PutObjectCommand } from "@aws-sdk/client-s
 import fs from "fs";
 import path from "path";
 import mime from "mime-types";
-import readline from "readline";
 
 // Initialize R2 Client
 const s3 = new S3Client({
@@ -28,46 +27,15 @@ function getFiles(dir) {
     return files.flat();
 }
 
-// Helper to read stdin line by line and return a Set of absolute paths
-async function readStdinPaths() {
-    const stdinPaths = new Set();
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-        terminal: false
-    });
-
-    for await (const line of rl) {
-        const trimmed = line.trim();
-        if (trimmed) {
-            // Resolve to absolute path so it matches the output of getFiles()
-            stdinPaths.add(path.resolve(trimmed));
-        }
-    }
-    return stdinPaths;
-}
-
 async function syncToR2() {
-    console.log("Reading file paths from stdin...");
-    const allowedStdinPaths = await readStdinPaths();
-
-    // If stdin was empty, we can exit early or skip all
-    if (allowedStdinPaths.size === 0) {
-        console.log("No file paths provided in stdin. Skipping all uploads.");
-        return;
-    }
-
     const absoluteLocalDir = path.resolve(LOCAL_DIR);
     const files = getFiles(absoluteLocalDir).filter(fn => {
-        // NEW: Skip uploading if the file path is not found in stdin
-        if (!allowedStdinPaths.has(fn)) { return false; }
-
         // Prefix-based disallow rules
         if (fn.indexOf('office/') > 0) { return false; };
         // Suffix-based allow rules
         if (fn.endsWith('.pdf')) { return true; };
         if (fn.endsWith('.pdf.png')) { return true; };
-        return false;
+        return false
     });
 
     for (const filePath of files) {

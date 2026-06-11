@@ -13,6 +13,8 @@
 # export R2_SECRET_ACCESS_KEY=xxx
 
 source .env
-node _utils/r2syncup.mjs
+
+### Only files new enough (modified within 7 days) are tried
+find _dist -type f -mmin -$((24 * 60 * 14)) | node _utils/r2syncup.mjs
 
 

@@ -49,11 +49,11 @@ function buildissuedetailpage() {
 
 
 ### STEP: Find all non-draft issues
-find pub -type f -name pub.toml | sort -r | while read -r toml_path; do
+while read -r toml_path; do
 	if [[ "$(tomlq -r .issue.draft "$toml_path")" == false ]]; then
 		# echo "Good! $toml_path is ok"
 		( buildissuedetailpage "$toml_path" ) &
 	fi
-done
+done < <(find pub -type f -name pub.toml | sort -r)
 
 wait

@@ -3,7 +3,7 @@
 ### Target: /articles/{id}/
 
 
-find database -name 'info.toml' | sort -r | while read -r toml_path; do
+while read -r toml_path; do
 	echo "toml_path=$toml_path"
 	f_state="$(tomlq -r .editor.state "$toml_path")"
 	if [[ "$f_state" != NewManuscript ]]; then
@@ -14,7 +14,7 @@ find database -name 'info.toml' | sort -r | while read -r toml_path; do
 			mustache wwwdist/prei18n/articles/"$obj_id"/info.json wwwsrc/sh/templates/article.html > wwwdist/prei18n/articles/"$obj_id"/index.html
 		) &
 	fi
-done
+done < <(find database -name 'info.toml' | sort -r)
 
 wait
 

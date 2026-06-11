@@ -10,6 +10,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="/js/likes.js" type="module"></script>
+
+
+<script>
+    window.addEventListener('load', function () {
+        document.querySelectorAll('.pleaseFixDateFormat').forEach(node => {
+            node.innerHTML = node.innerHTML.trim().replace('T', ' ').slice(0, 19);
+        });
+    });
+</script>
     <title i18n-for="en">{{editor.obj_id}} - {{article.title}} | Articles Archive | Fake Journal</title>
 <title i18n-for="zh">{{editor.obj_id}} - {{article.title}} | 所有文章 | Fake Journal</title>
 
@@ -199,6 +208,7 @@
             <div i18n-for="en" class="items-start flex flex-col gap-2">
                 <a href="/en/">Home</a>
                 <a href="/en/about/">About</a>
+                <a href="/en/news/">News</a>
                 <a href="/en/submit/">Submission Guide</a>
                 <a href="/en/submit-terms/">Manuscript Submission Terms</a>
                 <a href="/en/privacy/">Privacy Policy</a>
@@ -210,6 +220,7 @@
             <div i18n-for="zh" class="items-start flex flex-col gap-2">
                 <a href="/zh/">首页</a>
                 <a href="/zh/about/">关于</a>
+                <a href="/zh/news/">新闻</a>
                 <a href="/zh/submit/">投稿指南</a>
                 <a href="/zh/submit-terms/">投稿条款</a>
                 <a href="/zh/privacy/">隐私政策</a>

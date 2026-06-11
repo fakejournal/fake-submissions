@@ -6,7 +6,7 @@ mkdir -p .tmp
 tmp_json=".tmp/articleslist.json"
 echo '[]' > "$tmp_json"
 
-find database -name 'info.toml' | sort -r | while read -r toml_path; do
+while read -r toml_path; do
 	f_state="$(tomlq -r .editor.state "$toml_path")"
 
 	if [[ "$f_state" != NewManuscript ]]; then
@@ -20,7 +20,7 @@ find database -name 'info.toml' | sort -r | while read -r toml_path; do
 			> "$tmp_json.tmp" &&
 			mv "$tmp_json.tmp" "$tmp_json"
 	fi
-done
+done < <(find database -name 'info.toml' | sort -r)
 
 # cat .tmp/articleslist.json
 # echo cat .tmp/articleslist.json

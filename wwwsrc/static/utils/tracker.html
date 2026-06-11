@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Journal Utility - Tracker Timeline Drafting</title>
+
+    <style>
+        html,
+        body {
+            font-size: 21px;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        button {
+            font-size: 1rem;
+        }
+
+        textarea {
+            width: 100%;
+            height: 25em;
+            resize: none;
+        }
+    </style>
+    <script>
+        const data_map = {};
+        const entries_arr = [];
+        function create_entry(id, text, author = "SYSTEM") {
+            entries_arr.push(id);
+            data_map[id] = { text, author };
+        };
+        function show_entry(seq) {
+            let draft = data_map[entries_arr[seq]]
+            let note = draft.text.trim().split('\n').map(x => x.trim()).join('\n');
+            document.querySelector('#main01').value = [
+                `[[timeline]]`,
+                `author = "${draft.author}"${draft.author === 'SYSTEM' ? '' : '  ### Set to your name!\n'}`,
+                `date = "${(new Date).toISOString().replace('Z', '+00:00')}"`,
+                `note = """${note}"""`,
+            ].join('\n');
+        };
+        create_entry(
+            `Created`,
+            `Thanks for submitting the manuscript. An editor will be assigned soon.
+
+            Please subscribe to https://github.com/fakejournal/fake-submissions/issues/1 for progress.`
+        );
+        create_entry(
+            `Editor Assigned`,
+            `An editor has been assigned. Awaiting reviewer allocation and review opinion.`
+        );
+        create_entry(
+            `Awaiting Review`,
+            `Reviewers have been assigned. We will let you know when we receive their feedback.`,
+            "Name of the Editor"
+        );
+        create_entry(
+            `Minor Revision`,
+            `Review opinion: Minor Revision.
+
+Instructions from reviewer:
+
+- Specify what changes need to make here.
+- Lorem ipsum dolor sit amet.
+
+You may take these instructions to update your manuscript.
+You may also send the editor your counterarguments for instructions that you do not agree with.
+`, "Name of the Editor"
+        );
+        create_entry(
+            `Major Revision`,
+            `Review opinion: Major Revision.
+
+Instructions from reviewer:
+
+- Specify what changes need to make here.
+- Lorem ipsum dolor sit amet.
+
+You may take these instructions to update your manuscript.
+You may also send the editor your counterarguments for instructions that you do not agree with.
+`, "Name of the Editor"
+        );
+        create_entry(
+            `Accepted`,
+            `Congratulations! After careful review, we are ready to accept the current manuscript.
+`, "Name of the Editor"
+        );
+        create_entry(
+            `Published`,
+            `Your article has been published in issue [2022.01](https://fakejournal.org/en/issues/2022.01/).`
+        );
+    </script>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div>
+            <h1>Utility - Tracker Timeline Item Generator</h1>
+        </div>
+        <div style="height: 30px;"></div>
+
+
+
+        <div>Select a draft:</div>
+        <div id="actions"></div>
+        <div style="height: 30px;"></div>
+
+
+
+        <div>
+            <textarea name="" id="main01" placeholder="Generated draft will show here"></textarea>
+        </div>
+        <div style="height: 30px;"></div>
+
+        <div>
+            <h2>Notes:</h2>
+            <ol>
+                <li>See <a href="https://github.com/fakejournal/fake-submissions/blob/main/database/2022/2022.3170411/tracker.toml">example TOML</a> if in doubt.</li>
+                <li>See <a href="https://fakejournal.org/en/tracker/2022.3170411/">example tracker page</a> if in doubt.</li>
+                <li>New items should be appended at the end of "tracker.toml" file.</li>
+                <li>When completed, set "step" to 99.</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('#actions').innerHTML = entries_arr.map((val, idx) => {
+            return `<button onclick="show_entry(${idx})">${idx+1}. ${val}</button>`;
+        }).join('\n');
+    </script>
+</body>
+
+</html>
