@@ -10,12 +10,32 @@
         import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
         window.addEventListener("load", () => {
-            document
-                .querySelectorAll("[data-render-as-markdown]")
-                .forEach((el) => {
-                    const markdown = el.innerHTML;
-                    el.innerHTML = marked.parse(markdown);
-                });
+            document.querySelectorAll("[data-render-as-markdown]").forEach((el) => {
+                const markdown = el.innerHTML;
+                el.innerHTML = marked.parse(markdown);
+            });
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            document.querySelectorAll('.pleaseFixDateFormat').forEach(node => {
+                // node.innerHTML = node.innerHTML.trim().replace('T', ' ').slice(0, 19);
+                // node.innerHTML = (new Date(node.innerHTML)).toLocaleString();
+                const date = new Date(node.innerHTML);
+                const options = {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                };
+
+                // Replace commas or modify separators as needed
+                node.innerHTML = new Intl.DateTimeFormat('sv-SE', options).format(date).replace(',', '');
+
+            });
         });
     </script>
     <link rel="stylesheet" href="/css/tracker.css">
@@ -120,7 +140,8 @@
             {{#timeline}}
             <article class="p-4 border-1 border-gray-400 rounded-sm">
                 <section data-render-as-markdown class="text-lg">{{note}}</section>
-                <div class="text-gray-500 pt-3">{{date}} | {{author}}</div>
+                <div class="text-gray-500 pt-3">
+                    <span class="pleaseFixDateFormat">{{date}}</span> | {{author}}</div>
             </article>
             {{/timeline}}
         </div>

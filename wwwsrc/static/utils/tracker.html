@@ -41,9 +41,13 @@
                 `[[timeline]]`,
                 `author = "${draft.author}"${draft.author === 'SYSTEM' ? '' : '  ### Set to your name!\n'}`,
                 `date = "${(new Date).toISOString().replace('Z', '+00:00')}"`,
-                `note = """${note}"""`,
+                `note = """\n${note.trim()}\n"""`,
             ].join('\n');
         };
+
+        /*
+            Drafts are listed below. Propose changes on GitHub.
+        */
         create_entry(
             `Created`,
             `Thanks for submitting the manuscript. An editor will be assigned soon.
@@ -124,7 +128,8 @@ You may also send the editor your counterarguments for instructions that you do 
                 <li>See <a href="https://github.com/fakejournal/fake-submissions/blob/main/database/2022/2022.3170411/tracker.toml">example TOML</a> if in doubt.</li>
                 <li>See <a href="https://fakejournal.org/en/tracker/2022.3170411/">example tracker page</a> if in doubt.</li>
                 <li>New items should be appended at the end of "tracker.toml" file.</li>
-                <li>When completed, set "step" to 99.</li>
+                <li>When task is fully completed, set "step" to 99.</li>
+                <li>To propose changes, go to <a href="https://github.com/fakejournal/fake-submissions/blob/main/wwwsrc/static/utils/tracker.html">GitHub</a>.</li>
             </ol>
         </div>
     </div>

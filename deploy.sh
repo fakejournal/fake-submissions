@@ -14,7 +14,15 @@
 
 source .env
 
-### Only files new enough (modified within 7 days) are tried
-find _dist -type f -mmin -$((24 * 60 * 14)) | node _utils/r2syncup.mjs
+
+case $1 in
+	all )
+		find _dist -type f | node _utils/r2syncup.mjs
+		;;
+	* )
+		### Only files new enough (modified within 7 days) are tried
+		find _dist -type f -mmin -$((24 * 60 * 7)) | node _utils/r2syncup.mjs
+		;;
+esac
 
 
