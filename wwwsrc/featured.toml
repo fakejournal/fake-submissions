@@ -1,26 +1,26 @@
-imgurl = """https://images.unsplash.com/photo-1613451411927-49444b8f3f2f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZvb3R8ZW58MHx8MHx8fDI%3D"""
+imgurl = """https://images.unsplash.com/photo-1560148271-00b5e5850812?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dCUyMHJleHxlbnwwfHwwfHx8Mg%3D%3D"""
 
 
 [en]
-href = "/en/submit/"
+href = "/en/submit-guide/"
 title = """
-Fabrication of Non-Existent Control Cohorts Found Analgesic for Reviewer-Induced Temporary Foot Damage
+Why not untruth?
 """
 
 desc = """
-Blind peer review frequently inflicts severe Temporary Foot Damage (TFD) when authors are forced to shoot their own methodologies in the foot to appease reviewers. This trial demonstrates that fabricating fictional control groups and aggressively p-hacking the remaining variables provides powerful trauma relief. Authors seeking clinical catharsis are urged to submit their most flawlessly structured, fraudulent control data to our Peer Review Theatre.
+Ready to submit a parody “research” manuscript? FAKE JOURNAL is a satire academic journal for playful scholars who love fake data, absurd methods, and overconfident conclusions. Contribute your funniest paper, join the community of critical comedians, and help turn the conventions of academic publishing into the punchline.
 """
 
 
 
 [zh]
-href = "/zh/submit/"
+href = "/zh/submit-guide/"
 title = """
-研究发现，针对评审员造成的暂时性足部损伤，虚构的对照组被认定具有镇痛作用
+为什么不来点「不实」？
 """
 
 desc = """
-当作者被迫为了取悦审稿人而自毁研究方法时，双盲同行评审往往会造成严重的暂时性足部损伤（TFD）。本试验表明，捏造虚构的对照组并针对剩余变量进行激进的 p 值操纵，能有效缓解这种创伤。我们敦促寻求临床宣泄的作者，将结构最完美、造假最精妙的对照数据提交至我们的同行评审剧场。
+准备好投稿一篇戏仿“研究”手稿了吗？FAKE JOURNAL 是一本面向爱搞笑的学术期刊，用来刊登讽刺性的论文：会故意编造数据、用离谱的方法，最后还要一本正经地得出荒诞结论。贡献你最搞的论文，加入这个质疑型“学术喜剧”社区，让学术出版的传统成为笑点。
 """
 
 

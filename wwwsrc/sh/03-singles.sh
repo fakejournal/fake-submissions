@@ -3,6 +3,7 @@
 SINGLE_PAGES="
 about
 submit
+submit-guide
 submit-terms
 privacy
 me
