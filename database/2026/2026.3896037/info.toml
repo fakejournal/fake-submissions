@@ -8,8 +8,8 @@ date_accept = 1980-01-01
 date_print = 1980-01-01
 # issue_serial = "1"
 # issue_volume = "2026.01"
-# year = "2026"
-# month = "07"
+year = "2026"
+month = "06"
 
 
 

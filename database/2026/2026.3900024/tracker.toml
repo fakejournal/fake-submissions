@@ -1,0 +1,22 @@
+[tracker]
+step = 1
+
+
+
+[[timeline]]
+author = "SYSTEM"
+date = "2026-06-30T13:41:38+00:00"
+note = """
+Thanks for submitting the manuscript. An editor will be assigned soon.
+
+Please subscribe to https://github.com/fakejournal/fake-submissions/issues/4 for progress.
+"""
+
+
+
+[[timeline]]
+author = "SYSTEM"
+date = "2026-06-30T13:52:07+00:00"
+note = """
+An editor has been assigned. Awaiting reviewer allocation and review opinion.
+"""

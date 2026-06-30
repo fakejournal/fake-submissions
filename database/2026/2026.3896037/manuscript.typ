@@ -137,4 +137,4 @@ DFSA权重由猫踩键盘参与决定，可复现性存疑；
   @chen_2024
   @bangongshi_mao_2023
 ]
-#bibliography("ref.bib")
+#bibliography("ref.bib", title: heading(numbering: none, [参考文献]))
