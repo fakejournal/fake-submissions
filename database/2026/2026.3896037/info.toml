@@ -1,0 +1,61 @@
+[editor]
+obj_id = "2026.3896037"
+category_label = "Research"
+state = "NewManuscript"
+date_manuscript = 2026-06-30
+date_review = 1980-01-01
+date_accept = 1980-01-01
+date_print = 1980-01-01
+# issue_serial = "1"
+# issue_volume = "2026.01"
+# year = "2026"
+# month = "07"
+
+
+
+
+
+[article]
+title = """
+短视频刷取频率与剩余注意⼒半衰期的微分⽅程建模
+"""
+
+authors_simple = "元宝, 夏招明"       # Simplest plain text format to indicate authors
+
+abstract = """
+本研究试图回答⼀个被主流认知科学⻓期忽视的问题：当⼈类每⽇短视频刷取时⻓突破 120 min 后，剩余注意⼒半衰期是否真的趋近于 0，还是会发⽣某种"越刷越觉得⾃⼰还能再刷"的⾮线性反弹？通过对 114 名⾃称"刷到凌晨三点但明天还要上班"的受试者进⾏ 14 天伪⾯板追踪，本研究构造了 DFSA（Daily Fake Short-video Absorption）指数，并建⽴了⼀个带阻尼振荡修正项的微分⽅程模型。主要发现：(1) DFSA ≥ 85 时，主观时间感膨胀系数 τ ≈ 4.02（即"刷了 10 分钟觉得只过了2分钟"）；(2) 剩余注意⼒半衰期 T₁/₂与DFSA呈幂律衰减关系 T₁/₂ = 47.3·DFSA^(-1.87)（R²=0.94，p=0.0489）；(3) 引⼊"晚饭后的沙发势能"作为外⽣变量后，模型解释⼒提升⾄ R²=0.96。本研究结论对"为什么我明明困了却还在刷"这⼀世纪难题提供了数学上不严谨但修辞上令⼈信服的解释。
+"""
+
+
+
+
+
+
+[[author]]
+full_name = "元宝"
+index_name = "Yuanbao"
+email = "user1@example.com"
+orcid = "NULL"
+corresponding = false
+affiliations = [ 1, 2 ]
+
+[[author]]
+full_name = "夏招明"
+index_name = "Xia, Z."
+email = "hellozhaoming@outlook.com"
+orcid = "NULL"
+corresponding = true
+affiliations = [ 1 ]
+
+[affiliations.1]
+organization = "南半球反向⼯业⼤学认知卸载实验室"
+city = "NULL"
+country = "NULL"
+ror = "NULL"
+
+[affiliations.2]
+organization = "⽩嫖腾讯AI实验室"
+city = "NULL"
+country = "NULL"
+ror = "NULL"
+

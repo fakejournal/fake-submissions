@@ -186,7 +186,8 @@
       let aff_dict = dataobj.affiliations
       for (key, aff) in aff_dict [
         #text(size: 9pt, fill: gray.darken(70%), [
-          #super(key) #aff.organization, #aff.city, #aff.country
+          #let my_arr = (aff.organization, aff.city, aff.country).filter(it => it != "NULL")
+          #super(key) #my_arr.join([, ])
         ])
         #v(0.01mm)
       ]
