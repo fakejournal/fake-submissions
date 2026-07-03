@@ -4,8 +4,8 @@
 
 
 #quote(block: true)[
-Note: This is a parody work assisted by Claude Fable 5; all data,
-authors, and conclusions are fictional.
+  Note: This is a parody work assisted by Claude Fable 5; all data,
+  authors, and conclusions are fictional.
 ]
 
 = Abstract
@@ -27,7 +27,7 @@ large-scale benchmark of one million 3-SAT instances, and fine-tune the
 frontier model GPT-9 on it. The model attains an accuracy of
 #strong[87.3%] on the test set. By our proposed Accuracy--Confidence
 Correspondence Principle, we hereby announce: #strong[P = NP, with
-confidence 87.3%.] Scaling-law extrapolation further indicates that the
+  confidence 87.3%.] Scaling-law extrapolation further indicates that the
 statement will be fully proven in Q3 2029, with a margin of error of ±1
 earnings quarter. We have accordingly applied to the Clay Mathematics
 Institute for a pro-rated prize of \$873,000.
@@ -41,7 +41,7 @@ proof; confidence as truth; leaderboard epistemology
 Since Cook (1971) introduced the theory of NP-completeness, the question
 of whether P equals NP has attracted generations of researchers and was
 named one of the seven Millennium Prize Problems by the Clay Mathematics
-Institute, carrying a one-million-dollar reward \[1\]. It is remarkable,
+Institute, carrying a one-million-dollar reward @cook1971complexity. It is remarkable,
 however, that over more than sixty years the field has exhibited a
 striking methodological conservatism: researchers have insisted on
 \"proof\" --- a zero-tolerance evaluation protocol in which every single
@@ -56,7 +56,7 @@ been validated by an ablation study.
 
 Meanwhile, the AI community has developed a far more mature
 problem-solving framework: #strong[for any problem, build a benchmark
-and let a large model learn it --- that is all.] Protein folding,
+  and let a large model learn it --- that is all.] Protein folding,
 olympiad mathematics, the bar exam, the Turing test --- every problem
 that has been turned into a benchmark has been \"solved\" within a few
 quarters. There is no reason to believe NP-complete problems will be an
@@ -198,7 +198,7 @@ By Theorem 1 and Definition 3, we arrive at the central conclusion of
 this paper:
 
 #quote(block: true)[
-#strong[P = NP, with confidence 87.3%.]
+  #strong[P = NP, with confidence 87.3%.]
 ]
 
 == 4.2 Outlier ablation
@@ -223,8 +223,8 @@ model will reach 100% accuracy at 3 × 1028 FLOPs.
 We therefore predict:
 
 #quote(block: true)[
-#strong[P = NP will be fully proven in Q3 2029, with a margin of error
-of ±1 earnings quarter.]
+  #strong[P = NP will be fully proven in Q3 2029, with a margin of error
+    of ±1 earnings quarter.]
 ]
 
 We urge the Clay Mathematics Institute to lock in the prize\'s exchange
@@ -233,10 +233,10 @@ rate in advance.
 #box(image("assets/figure1_scaling_law_en.png", alt: "Figure 1"))
 
 #emph[Figure 1: A smooth curve extending toward the upper right. Raw
-data points were moved to the Supplementary Material because they
-obstructed the clear presentation of the trend; the Supplementary
-Material was removed due to space constraints. The points shown are
-model checkpoints and do not constitute raw data.]
+  data points were moved to the Supplementary Material because they
+  obstructed the clear presentation of the trend; the Supplementary
+  Material was removed due to space constraints. The points shown are
+  model checkpoints and do not constitute raw data.]
 
 == 4.4 An independent line of evidence: model self-report
 <44-an-independent-line-of-evidence-model-self-report>
@@ -377,35 +377,25 @@ annoyed. Annoyance correlates significantly with this paper\'s citation
 count (#emph[p] \< 0.05, after outlier removal).
 
 
-= References
-<references>
-\[1\] Cook, S. A. The complexity of theorem-proving procedures.
-#emph[STOC] (1971).
-
-\[2\] Vaswani, A. et al. Attention is all you need. #emph[NeurIPS]
-(2017).
-
-\[3\] Anonymous. Scaling laws for mathematical truth. #emph[Unpublished;
-unverifiable, therefore unfalsifiable, therefore true] (2025).
-
-\[4\] Reviewer 2. Personal communication, reluctantly acknowledged.
-(2026).
-
-\[5\] GPT-9. GPT-9 technical report. #emph[The technical report of the
-technical report remains in preparation] (2026).
-
-\[6\] Li, Y. Toward a unified theory of benchmark-induced epistemology.
-#emph[Proceedings of the First Workshop on Things That Seem To Work]
-(2026).
-
-\[7\] Clay Mathematics Institute. Millennium Prize Problems.
-#emph[Website accessed when funding became relevant.]
+#place(dx: 999mm, [
+  @vaswani2017attention
+  @anonymous2025scalinglaws
+  @reviewer2personalcommunication2026
+  @gpt92026technicalreport
+  @li2026unifiedtheory
+  @cmi2000millenniumprize
+])
+#bibliography(
+  "ref.bib",
+  title: heading(numbering: none, [References]),
+  // style: "ieee",
+)
 
 
 #quote(block: true)[
-#strong[Note:] This article is a work of satire. All data are synthetic
-and all conclusions are fictional. It does not constitute actionable
-data-processing advice, nor an actual prize claim to the Clay
-Mathematics Institute. As of this writing, the relationship between P
-and NP remains unknown.
+  #strong[Note:] This article is a work of satire. All data are synthetic
+  and all conclusions are fictional. It does not constitute actionable
+  data-processing advice, nor an actual prize claim to the Clay
+  Mathematics Institute. As of this writing, the relationship between P
+  and NP remains unknown.
 ]

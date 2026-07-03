@@ -13,3 +13,10 @@ Please subscribe to https://github.com/fakejournal/fake-submissions/issues/5 for
 """
 
 
+
+[[timeline]]
+author = "SYSTEM"
+date = "2026-07-03T13:05:54.096+00:00"
+note = """
+An editor has been assigned. Awaiting reviewer allocation and review opinion.
+"""
