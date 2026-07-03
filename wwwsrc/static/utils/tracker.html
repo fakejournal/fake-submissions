@@ -49,6 +49,16 @@
             Drafts are listed below. Propose changes on GitHub.
         */
         create_entry(
+            `Issue Nav`,
+            `Tracker:
+[Read](https://fakejournal.org/en/tracker/__OBJID__/)
+[Edit](https://github.com/fakejournal/fake-submissions/blob/main/database/__YEAR__/__OBJID__/tracker.toml)
+
+Artifacts:
+[Manuscript](https://artifacts.fakejournal.org/database/__YEAR__/__OBJID__/manuscript.pdf)
+`.trim()
+        );
+        create_entry(
             `Created`,
             `Thanks for submitting the manuscript. An editor will be assigned soon.
 

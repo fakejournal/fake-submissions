@@ -1,0 +1,80 @@
+[editor]
+obj_id = "2026.3963789"
+category_label = "Research"
+state = "NewManuscript"
+date_manuscript = 2026-07-03
+date_review = 1980-01-01
+date_accept = 1980-01-01
+date_print = 1980-01-01
+# issue_serial = "1"
+# issue_volume = "2026.01"
+year = "2026"
+month = "07"
+
+
+
+
+[article]
+title = """
+P = NP in the Era of Large Language Models: An Empirical Resolution via Benchmark Saturation (Confidence: 87.3%)
+"""
+
+authors_simple = "S. Wang, Y. Li, GPT-9"       # Plaintext edition of author names
+
+abstract = """
+The relationship between P and NP is among the longest-standing open problems in theoretical computer science. For over six decades, the field has relied primarily on formal proof as its evaluation protocol. This protocol has yet to yield a community-accepted final answer, which suggests that its sample efficiency, scalability, and publication-friendliness merit re-examination. In this paper, we propose a paradigm-level alternative: Benchmark Reduction. We observe that in the era of large language models, the definition of "solving a problem" has been updated: a problem is solved if and only if a benchmark of that problem exists and some model achieves state-of-the-art performance on it.
+
+Building on this observation, we construct NP-Bench-1M, a large-scale benchmark of one million 3-SAT instances, and fine-tune the frontier model GPT-9 on it. The model attains an accuracy of 87.3% on the test set. By our proposed Accuracy-Confidence Correspondence Principle, we hereby announce: P = NP, with confidence 87.3%. Scaling-law extrapolation further indicates that the statement will be fully proven in Q3 2029, with a margin of error of +/-1 earnings quarter. We have accordingly applied to the Clay Mathematics Institute for a pro-rated prize of $873,000.
+"""
+
+
+
+
+# Describe every author
+
+[[author]]
+full_name = "Suanli Wang"
+index_name = "Wang, S."
+email = "wang@scaling.edu"
+orcid = ""                      ### Keep empty if not applicable
+corresponding = true            ### Is this author the corresponding author?
+affiliations = [ 1 ]            ### Affiliations in an array
+
+[[author]]
+full_name = "Yongxian Li"
+index_name = "Li, Y."
+email = "li@emergent-confidence.org"
+orcid = ""
+corresponding = false
+affiliations = [ 2 ]
+
+[[author]]
+full_name = "GPT-9"
+index_name = "GPT-9"
+email = "gpt9@rack-47b.datacenter"
+orcid = ""
+corresponding = false           ### Co-first author; contributions measured in output tokens
+affiliations = [ 3 ]
+
+
+
+
+# Institutions to be referenced.
+
+[affiliations.1]
+organization = "Department of Benchmark Science, University of Scaling"
+city = "NULL"
+country = "NULL"
+ror = "NULL"
+
+[affiliations.2]
+organization = "Institute for Emergent Confidence"
+city = "NULL"
+country = "NULL"
+ror = "NULL"
+
+[affiliations.3]
+organization = "Undisclosed Data Center, Rack 47-B"
+city = "Northern Virginia"
+country = "USA"
+ror = "NULL"
