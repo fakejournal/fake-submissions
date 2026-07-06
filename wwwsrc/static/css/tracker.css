@@ -31,6 +31,42 @@ td:first-child {
 
 
 
+[data-render-as-markdown] h1,
+[data-render-as-markdown] h2,
+[data-render-as-markdown] h3,
+[data-render-as-markdown] h4,
+[data-render-as-markdown] h5,
+[data-render-as-markdown] h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0.75em 0 0.35em;
+}
+
+[data-render-as-markdown] h1 {
+    font-size: 2.125rem;
+}
+
+[data-render-as-markdown] h2 {
+    font-size: 1.625rem;
+}
+
+[data-render-as-markdown] h3 {
+    font-size: 1.375rem;
+}
+
+[data-render-as-markdown] h4 {
+    font-size: 1.125rem;
+}
+
+[data-render-as-markdown] h5 {
+    font-size: 1rem;
+}
+
+[data-render-as-markdown] h6 {
+    font-size: 0.875rem;
+}
+
+
 [data-render-as-markdown] a {
     text-decoration: underline;
 }

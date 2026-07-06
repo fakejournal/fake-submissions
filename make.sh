@@ -50,6 +50,10 @@ case $1 in
 		done
 		echo "(HINT)  You may want to also run:  " bash wwwsrc/cfwsdeploy.sh
 		;;
+	tracker )
+		bash wwwsrc/sh/41-tracker.sh
+		bash wwwsrc/sh/81-i18n.sh
+		;;
 	init )
 		command -v yarn > /dev/null 2>&1 || _die 1 "[ERROR] You must install 'yarn'."
 		yarn
