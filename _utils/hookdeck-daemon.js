@@ -8,11 +8,12 @@
 const http = require('http');
 const { exec } = require('child_process');
 
-const PORT = 12287;
+const PORT = Number(process.env.PORT);
+const TOKEN = process.env.TOKEN;
 
 const server = http.createServer((req, res) => {
     // Only trigger on POST requests (GitHub webhooks are POSTs)
-    if (req.method === 'POST') {
+    if (req.method === 'POST' && req.url === `/${TOKEN}`) {
         console.log('Received webhook from Hookdeck! Running "_utils/hookdeck-on-push.sh" ...');
 
         // Execute your bash script
