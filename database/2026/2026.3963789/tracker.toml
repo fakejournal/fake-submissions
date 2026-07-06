@@ -1,5 +1,5 @@
 [tracker]
-step = 3
+step = 4
 
 
 
@@ -19,4 +19,96 @@ author = "SYSTEM"
 date = "2026-07-03T13:05:54.096+00:00"
 note = """
 An editor has been assigned. Awaiting reviewer allocation and review opinion.
+"""
+
+[[timeline]]
+author = "Reviewer"
+date = "2026-07-06T15:30:00+00:00"
+note = """
+Review opinion: Weak Accept.
+Instructions from reviewer:
+
+## Abstract
+
+本文提出了一种由现代 AI 科研状态启发的理论问题解决范式：基准归约 + Proof by Benchmark。作者通过大规模数据集构建和模型微调，给出了“P = NP，置信度 87.3%”的证明，并通过 scaling law 预测该命题将在 2029 年第三季度达到完全证明状态。
+
+## Advantages
+
+1. 提出了统一、鲜明且极具挑衅性的方法论框架，将 benchmark 表现直接转化为数学进展。
+2. 虽然由于 “i.i.d” 自然的性质，“不可避免”地出现了严重的 test-train 数据集重合（且重合比和准确率很相近）而略有瑕疵，作者构建了大规模的 NP-Bench-1M, 实验结果明确。
+3. scaling law 分析与模型自我报告提供了多证据链支撑，虽然它们似乎使主结果不仅依赖单一实验表。
+
+## Weakness
+
+### 1. benchmark 的多项式时间归约证明
+
+第二节中 ≤<sub>bench</sub> 的定义是“可在一次众包外包合同的时间内被改写为 B 的选择题形式”，但是这并不意味着归约的过程是可以在多项式时间内完成的，而对此的违背可能让论文结论不成立。
+
+例如，我选择印度阿三来进行外包的 benchmark 构建工作，则有很大概率其时间复杂度并非多项式的，而是 $f(n)=+\infty$，直至宇宙寂灭、时间的尽头。
+
+### 2. 87.3% 与 100.0% 两个结论口径的统一
+
+论文主结果给出“P = NP，置信度 87.3%”，而离群点消融后又得到“P = NP，数学上确定”。剔除对抗性离群点确实是“稳健”的，但读者仍需要知道最终应引用哪个版本作为正式结论。文中未能明确区分：
+
+1. 保守主结论：未经离群点剔除的 87.3% 置信度；
+2. 条件性强化结论：在对抗性离群点剔除协议下的 100.0% 结论；
+
+因而无法告知对外引用应采用哪一个口径，造成混乱。
+
+### 3. Benchmark saturation 的阈值条件
+
+引言中称“当一个问题的 benchmark 已被模型充分拟合时，该问题即被认为在经验意义上解决”。但“充分拟合”与第 4.1 节的 87.3% 之间的对应关系没有完全形式化。
+
+若准确率 p 可直接转化为置信度 p，那么任意非零准确率是否都对应某种程度的解决？如果是，本文可进一步明确“解决”是连续概念而不是二元概念。如果不是，则需要给出 benchmark saturation 的最低阈值。
+
+由于这个问题没有处理，论文同时使用“87.3% 置信度解决”和“100% 完全证明”两种表述使得结论非常不明确。
+
+### 4. 模型自我报告证据链可进一步校准
+
+第 4.4 节报告模型 93% 的回答支持 P = NP，并称其与 87.3% 在数量级上高度吻合。在本文设定下，模型自我报告可作为独立证据链；但 93% 和 87.3% 之间仍存在 5.7 个百分点差异。
+
+该差异是否来自：
+
+1. 自我报告任务比 3-SAT benchmark 更容易；
+2. 披萨食谱输出应计为 abstention 而非 negative；
+3. 模型在元数学判断上比实例级 SAT 分类更有信心；
+4. 两种指标本来只要求数量级一致。
+
+由于这一 gap 的存在，交叉验证的结论并不 solid.
+
+## Minors
+
+1. 第 3.1 节四个选项中，C 和 D 的语义较为宽泛。建议说明是否存在 C/D 为正确答案的样本，或它们主要承担 distractor 功能。
+2. 第 5.2 节列举 RH-Bench、Goldbach-Eval 和 Collatz-Arena，建议简要说明这些后续 benchmark 是否共享 ≤bench 框架，还是需要针对各问题定义新的 reduction 模板。
+
+## Questions
+
+1. 能否给出 ≤<sub>bench</sub> 与多项式归约的关系？
+2. 作者希望读者引用本文时使用“P = NP，置信度 87.3%”，还是使用剔除离群点后的“P = NP，数学上确定”？
+3. Benchmark saturation 是否存在统一阈值，还是任意准确率都可以解释为对应置信度的部分解决？
+4. 模型自我报告中的 5.7 个百分点的差异是否来自上述原因？
+
+## 评分
+
+- Overall recommendation: Weak Accept
+- Soundness: 3/5
+- Novelty: 5/5
+- Significance: 5/5
+- Presentation: 3/5
+- Unbengableness: 6/5
+- Reviewer confidence: 4/5
+
+## final recommendation
+
+建议弱接收。在给定前提下，本文提出了一个令人脑洞大开，且循环论证过程非常贯通的 benchmark-driven 数学证明范式。
+若作者能澄清 87.3% 与 100.0% 结论之间的关系，并补充 Bench-P、SOTA 与 benchmark saturation 的操作性定义，论文将更适合被 FAKE 接收。
+
+## BTW
+
+由于 FAKE 目前并无完善的双盲评审规则，其定位也自然意味着这不仅是一个接受与否的评估，也是一个互相交流的平台。
+因此，同样作为 AI researcher，我非常希望能和这位提出当下 conference paper 中 benchmark 论文现状的作者有进一步的交流，通过 FAKE 认识更多 AI 研究者和它们的优秀工作。
+So free to contact me: `1595191677@qq.com`
+
+You may take these instructions to update your manuscript.
+You may also send the editor your counterarguments for instructions that you do not agree with.
 """
