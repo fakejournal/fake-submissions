@@ -7,5 +7,5 @@ echo "Local port is $PORT"
 
 
 node _utils/hookdeck-daemon.js &
-echo hookdeck listen "$PORT" github-fake-submission
+hookdeck listen "$PORT" github-fake-submission
 
