@@ -1,0 +1,50 @@
+[editor]
+obj_id = "2026.4311164"
+category_label = "Story"
+state = "NewManuscript"
+date_manuscript = 2026-07-19
+date_review = 1980-01-01
+date_accept = 1980-01-01
+date_print = 1980-01-01
+# issue_serial = "1"
+# issue_volume = "2026.01"
+year = "2026"
+month = "07"
+
+
+
+
+[article]
+title = """
+一套重复不出来的力场参数
+"""
+
+authors_simple = "李永乐"       # Plaintext edition of author names
+
+abstract = """
+事情还要从2009年左右说起（Dmitri V. Sakharov & Carmay Lim, (2009) J. Comput. Chem. 30, 191）。
+"""
+
+
+
+
+# Describe every author
+
+[[author]]
+full_name = "李永乐"
+index_name = "Li, Y."
+email = "NULL"
+orcid = ""                      ### Keep empty if not applicable
+corresponding = true            ### Is this author the corresponding author?
+affiliations = [ 1 ]            ### Affiliations in an array
+
+
+
+
+# Institutions to be referenced.
+
+[affiliations.1]
+organization = "上海大学物理系"
+city = "上海市宝山区上大路99号E楼121，200444"
+country = "NULL"
+ror = "NULL"
