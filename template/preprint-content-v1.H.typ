@@ -46,7 +46,7 @@
               // Only render affiliation superscripts if the key exists
               #if "affiliations" in auth [
                 #super(text(fill: gray.darken(40%), {
-                  auth.affiliations.map(str).join(",")
+                  auth.affiliations.map(str).join(", ")
                 }))
               ]
               // Safely check for corresponding status without crashing if the key is missing
@@ -67,7 +67,7 @@
       for (key, aff) in aff_dict [
         #text(size: 9pt, fill: gray.darken(70%), [
           #let my_arr = (aff.organization, aff.city, aff.country).filter(it => it != "NULL")
-          #super(key) #my_arr.join([, ])
+          #super(key) #my_arr.join([,~])
         ])
         #v(0.1mm)
       ]
@@ -92,15 +92,17 @@
   doc
 }
 
-#let make_preprint(doc) = {
+#let make_preprint(doc, line_stretch: 100%) = context {
   set page(paper: "a4", margin: (top: 15mm, bottom: 20mm, left: 15mm, right: 15mm), footer: [
     #h(1fr)
     #set text(size: 9pt, font: __font_sans, weight: 500)
     #context counter(page).display()
   ])
   set heading(bookmarked: false)
-  set text(font: ("TeX Gyre Heros",) + __font_sans, size: 13pt)
-  set par(leading: 0.7em, spacing: 1.0em, justify: true, first-line-indent: 0em)
+  set text(font: ("TeX Gyre Heros", ) + __font_sans, size: 13pt)
+  set par(leading: 0.7em * line_stretch, spacing: 1.0em * line_stretch, justify: true, first-line-indent: 0em)
+
+  show math.equation: set text(font: ("Latin Modern Math", ..((text.font,).flatten())))
   
   show heading: it => {
     let intensity = (7 - it.depth)

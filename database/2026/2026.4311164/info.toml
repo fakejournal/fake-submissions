@@ -45,6 +45,6 @@ affiliations = [ 1 ]            ### Affiliations in an array
 
 [affiliations.1]
 organization = "上海大学物理系"
-city = "上海市宝山区上大路99号E楼121，200444"
+city = "上海市宝山区上大路99号E楼121, 200444"
 country = "NULL"
 ror = "NULL"
