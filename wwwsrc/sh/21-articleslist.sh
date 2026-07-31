@@ -8,8 +8,9 @@ echo '[]' > "$tmp_json"
 
 while read -r toml_path; do
 	f_state="$(tomlq -r .editor.state "$toml_path")"
+	f_year="$(tomlq -r .editor.year "$toml_path")"
 
-	if [[ "$f_state" != NewManuscript ]]; then
+	if [[ "$f_state" != NewManuscript ]] && [[ "$f_year" -gt 2023 ]]; then
 		obj_dir="$(dirname "$toml_path")"
 
 		tomlq . "$toml_path" |

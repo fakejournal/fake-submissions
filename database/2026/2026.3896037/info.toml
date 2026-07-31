@@ -1,9 +1,9 @@
 [editor]
 obj_id = "2026.3896037"
 category_label = "Research"
-state = "NewManuscript"
+state = "PreAccept"
 date_manuscript = 2026-06-30
-date_review = 1980-01-01
+date_review = 2026-07-31
 date_accept = 1980-01-01
 date_print = 1980-01-01
 # issue_serial = "1"

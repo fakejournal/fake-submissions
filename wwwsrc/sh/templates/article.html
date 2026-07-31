@@ -122,6 +122,19 @@
                         <span data-i18n="en:Read PDF|zh:阅读 PDF"></span>
                     </a>
                 </div>
+                <div data-for-state="single">
+                    <a class="block text-center text-lg bg-blue-500 text-white px-2 py-1 rounded-md min-w-40" href="https://artifacts.fakejournal.org/database/{{editor.year}}/{{editor.obj_id}}/single.pdf">
+                        <span data-i18n="en:Read PDF|zh:阅读 PDF"></span>
+                    </a>
+                </div>
+                <script>
+                    if ('PreAccept' === '{{editor.state}}') {
+                        document.querySelector('[data-for-state="final"]').remove();
+                    }
+                    if ('Published' === '{{editor.state}}') {
+                        document.querySelector('[data-for-state="single"]').remove();
+                    }
+                </script>
                 <div><a href="../../tracker/{{editor.obj_id}}/">Tracker</a></div>
                 <div class="jsArticleInteractionWidget" data-objid="{{editor.obj_id}}"></div>
             </div>
