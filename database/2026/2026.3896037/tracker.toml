@@ -12,3 +12,18 @@ Thanks for submitting the manuscript. An editor will be assigned soon.
 Please subscribe to https://github.com/fakejournal/fake-submissions/issues/3 for progress.
 """
 
+[[timeline]]
+author = "SYSTEM"
+date = "2026-08-01T02:12:29.086+00:00"
+note = """
+An editor has been assigned. Awaiting reviewer allocation and review opinion.
+"""
+
+[[timeline]]
+author = "Physhan"
+date = "2026-08-02T00:53:57.883+00:00"
+note = """
+After careful review, your manuscript has entered Pre-Accept status. This indicates that the paper will likely be Accepted soon; however, we encourage you to submit a further revision to address potential improvements.
+
+https://fakejournal.org/en/articles/2026.3896037/
+"""

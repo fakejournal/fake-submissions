@@ -1,7 +1,6 @@
 #import "/template/single-v1.H.typ": *
 
 
-
 #show: make_single.with(input_toml: toml("info.toml"))
 // #make_title(toml("info.toml"), title_override: none)
 #make_title(toml("info.toml"), abstract_content: [

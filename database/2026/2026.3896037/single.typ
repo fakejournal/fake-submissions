@@ -1,4 +1,6 @@
 #import "/template/single-v1.H.typ": *
+// #import "@preview/cjk-unbreak:0.2.3": *
+// #show: remove-cjk-break-space
 
 
 
@@ -175,7 +177,8 @@
 
 #review_file_page[
   = 编辑审稿意见
-  #strong[稿件题目：]《短视频刷取频率与剩余注意力半衰期的微分方程建模——一项基于114名重度用户的伪面板研究》
+  // #strong[稿件题目：]《短视频刷取频率与剩余注意力半衰期的微分方程建模——一项基于114名重度用户的伪面板研究》
+  #strong[稿件题目：]《短视频刷取频率与剩余注意力半衰期的微分方程建模一项基于114名重度用户的伪面板研究》
 
   #strong[评审结论：推荐收录于 Pre 版本]
 
