@@ -1,0 +1,52 @@
+[editor]
+obj_id = "2026.4739445"
+category_label = "Editorial Announcement"
+state = "PreAccept"
+date_manuscript = 2026-08-08
+date_review = 2026-08-08
+date_accept = 2026-08-08
+date_print = 1980-01-01
+# issue_serial = "1"
+# issue_volume = "2026.01"
+year = "2026"
+month = "08"
+
+
+
+
+[article]
+title = """
+什么样的 Fake 值得发表？
+"""
+
+authors_simple = "Physhan"       # Plaintext edition of author names
+
+abstract = """
+在过去几年中，围绕学术诚信、科研可复现性以及论文生产机制的讨论正在变得越来越频繁。Retraction Watch 等平台持续追踪撤稿论文与学术不端案例，使得"论文是如何被撤回的"逐渐成为一个被公开讨论的研究对象；与此同时，各类关于数据造假、图像篡改、统计操纵以及"不可复现结果"的报道，也不断提醒我们：科学论文不仅是知识的载体，也是一种高度制度化的生产物。
+  
+在这一背景下，"造假"不再只是一个道德标签，而逐渐成为一个可以被分析、被建模、甚至被系统性研究的对象。我们开始意识到，许多所谓"错误"并非偶然，而是嵌入在评价体系、发表机制与方法论惯性之中的结构性产物。
+"""
+
+
+
+
+# Describe every author
+
+[[author]]
+full_name = "Physhan"
+index_name = "Physhan"
+email = "physhan@fakejournal.org"
+orcid = ""                      ### Keep empty if not applicable
+corresponding = true            ### Is this author the corresponding author?
+affiliations = [ 1 ]            ### Affiliations in an array
+
+
+
+
+# Institutions to be referenced.
+
+[affiliations.1]
+organization = "Fake Journal"
+city = "https://fakejournal.org"
+country = "NULL"
+ror = "NULL"
