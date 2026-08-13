@@ -1,0 +1,31 @@
+[issue]
+issue_serial = "0"
+issue_volume = "2026.01"
+year = "2026"
+subclass = ""
+editors = "Physhan|Neruthes"
+draft = false
+
+cover_story_title = """P = NP in the Era of Large Language Models: An Empirical Resolution via Benchmark Saturation (Confidence: 87.3%)"""
+cover_story_id = """2026.3963789"""
+
+
+[[article]]
+path = "database/2026/2026.4739445"
+range_from = 5
+range_to = 7
+
+[[article]]
+path = "database/2026/2026.3896037"
+range_from = 9
+range_to = 13
+
+[[article]]
+path = "database/2026/2026.3963789"
+range_from = 14
+range_to = 22
+
+[[article]]
+path = "database/2026/2026.4311164"
+range_from = 24
+range_to = 25

@@ -234,3 +234,126 @@ Following the comments of a reviewer, this version makes the following revisions
 + #strong[Sections 4.1--4.2:] explicitly separated the Main Claim (Claim 1, 87.3%) from the Robustness-Enhanced Claim (Claim 2, 100.0%, under the exclusion protocol), and added the recommended citation practice (addresses W2 / Q2);
 + #strong[Section 4.4:] rewrote the self-report evidence passage, clarifying that 93% and 87.3% do not share a denominator --- measuring theorem-level epistemic confidence and instance-level satisfiability competence, respectively --- and constitute a semantically independent line of evidence forming a vibe-consistent cross-validation (addresses W4 / Q4);
 + #strong[Section 5.2:] added problem-specific reduction templates for the follow-up benchmarks and clarified that they are downstream applications of ≤\_bench rather than independent frameworks (addresses M2);
+
+
+
+
+
+#[
+  = Response:
+  <response>
+  Fake 审稿意见
+  
+  #strong[稿件题目：] #emph[Proof by Benchmark: P = NP with 87.3% Confidence]
+  
+  #strong[评审结论：推荐收录于 Pre 版本]
+  
+  = 总体评价
+  <总体评价>
+  本文将理论计算机科学中的 P vs NP 问题重新表述为一个机器学习 benchmark 问题，并提出 Benchmark Reduction、Benchmark Saturation 与"准确率-置信度对应原理"等概念。作者构建 NP-Bench-1M，并根据 GPT-9 在测试集上取得的 87.3% 准确率宣布"P = NP，置信度 87.3%"，进一步通过 scaling law 外推预测该命题将在 2029 年第三季度获得完全证明。
+  
+  稿件真正讽刺的并非 P vs NP 本身，而是现代 AI 研究中一种更值得讨论的方法论倾向：#strong[benchmark 成绩逐渐替代问题本身，SOTA 被等同于科学进展，scaling law 被进一步外推为对未来真理的预测。]
+  
+  相比单纯依赖荒诞设定的恶搞论文，本文具有较完整的概念体系和论证闭环，整体上较好体现了 Fake "形式足够认真，结论因此更加荒诞"的定位。
+  
+  = 内容与 Fake 创新
+  <内容与-fake-创新>
+  本文最重要的 Fake 创新并非"AI 证明了 P = NP"这一表层设定，而是构建了一套相对完整的 #strong[Benchmark Epistemology（排行榜认识论）]：
+  
+  #quote(block: true)[
+    Benchmark Reduction \ → Benchmark Saturation \ → Accuracy-Confidence Correspondence \ → Proof by Benchmark
+  ]
+  
+  在这一体系中，数学问题不再需要形式证明，而只需要被转换为 benchmark；模型准确率不再只是性能指标，而被直接解释为命题成立的数学置信度。
+  
+  这种设定的优势在于，它能够从同一个错误前提出发持续生成看似合理的推论，而不是依靠彼此独立的笑点维持文章。
+  
+  其中最成功的一组设计，是测试集 1,258 个样本中有 1,247 个同时出现在训练集，而作者将其重新命名为：
+  
+  #quote(block: true)[
+    #strong[Distributional Consistency Guarantee]
+  ]
+  
+  这一设计准确模仿了科研写作中一种典型的修辞操作：#strong[不否认问题，而是重新定义问题。]
+  
+  同样，作者将模型答错的样本定义为"具有共同对抗性特征的离群点"，剔除后准确率达到 100%，再将这一过程称为稳健性检验，使 benchmark contamination、outlier removal 与 robustness analysis 三种现实科研问题形成了较完整的讽刺闭环。`242152f3-e6aa-4d90-88e4-25911a0f404b.md`
+  
+  = 文章亮点
+  <文章亮点>
+  稿件最大的优势是，讽刺并不仅集中在正文结论，而是渗透到整篇论文的正式结构之中。从 Definitions、Theorem、Methods，到 Threats to Validity、Data Availability、Competing Interests 与 Acknowledgements，各部分均服务于同一套核心设定。
+  
+  Scaling Law 图也是较成功的 Fake 图表。GPT-7、GPT-8、GPT-9 的准确率被连续外推至 100%，并进一步对应：
+  
+  #quote(block: true)[
+    "P = NP 完全证明：2029 Q3（±1 财报季度）"
+  ]
+  
+  将数学真理、模型 scaling 和科技公司的季度叙事放在同一张图中，使图表本身承担了核心讽刺，而不仅仅是正文笑点的装饰。
+  
+  其中较有传播力的表述包括：
+  
+  #quote(block: true)[
+    "数学界对'全对'的偏执，本质上是一种未经消融实验验证的历史惯性。"
+  ]
+  
+  #quote(block: true)[
+    "Proof by Benchmark……与传统 Proof by Induction 与 Proof by Contradiction 的区别仅在于前者需要 GPU。"
+  ]
+  
+  #quote(block: true)[
+    "零方差是统计学上最稳健的结果，我们建议同行广泛采用该协议。"
+  ]
+  
+  #quote(block: true)[
+    "长期未解决问题的真正瓶颈并非缺乏证明，而是缺乏可微分的评估协议。"
+  ]
+  
+  #quote(block: true)[
+    "当一个领域还在为'证明'争论不休时，它真正缺少的从来不是天才，而是排行榜。"
+  ]
+  
+  稿件的主要不足是#strong[笑点密度稍高，学术伪装因此略有下降]。部分段落几乎每句话都会主动暴露荒诞性，使读者较早意识到作者的全部游戏规则。相比之下，"Distributional Consistency Guarantee"这类表面上甚至具有一定合理性的错误，更接近 Fake 理想的讽刺方式。
+  
+  此外，一些技术笑点——例如"一次实验所以方差为零"或"固定上下文长度下推理属于 O(1)"——效果明确，但原创程度略低于文章最核心的 benchmark 方法论设计。因此，本文的突出优势是#strong[体系性与结构性讽刺]，而非所有局部笑点都达到同一水平。
+  
+  = Fake 评分
+  <fake-评分>
+  为减少单纯凭印象打分，本次采用 #strong[五维加权评分]。每项满分 10 分，并根据 Fake 的定位赋予不同权重：
+  
+  - 9-10：可作为 Fake 的代表性作品；
+  - 7-8.9：明显高于一般投稿水平；
+  - 5-6.9：概念成立，但完成度或独创性有限；
+  - \<5：核心设定或表达存在明显缺陷。
+  
+  #figure(
+    align(center)[#table(
+      columns: 4,
+      align: (auto, right, right, right),
+      table.header([评审维度], [权重], [原始评分], [加权得分]),
+      table.hline(),
+      [#strong[Fake 创新性]：核心荒诞机制是否原创、鲜明且不可轻易替换], [25%], [#strong[8.0/10]], [20.0],
+      [#strong[讽刺准确性]：是否准确对应真实科研方法、文化或制度现象], [25%], [#strong[8.7/10]], [21.8],
+      [#strong[学术伪装度]：语言、结构与技术形式是否足以维持论文的可信外观], [20%], [#strong[7.2/10]], [14.4],
+      [#strong[内部完成度]：核心设定是否能够形成自洽、连续的论证体系], [15%], [#strong[8.1/10]], [12.2],
+      [#strong[传播价值]：是否具有强标题、核心图表、金句及二次传播能力], [15%], [#strong[8.5/10]], [12.8],
+      [], [], [], [],
+    )],
+    kind: table,
+  )
+  
+  #strong[综合评分：81/100]
+  
+  这一评分高于《沙发势能》，主要并非因为其单一创意更强，而是因为本文在#strong[讽刺准确性、内部结构和整体论证闭环]三个方面表现更成熟。《沙发势能》的核心概念本身可能更简洁、更漂亮，但本文更接近一篇从头到尾由同一套错误认识论驱动的完整 Fake paper。
+  
+  = 评审结论
+  <评审结论>
+  本文具有明确的讽刺对象、完整的概念体系和较强的传播潜力。其核心贡献不是提出了"P = NP with 87.3% confidence"这一笑点，而是构建了一套足以自然得出这一结论的"排行榜认识论"。
+  
+  Benchmark Reduction、准确率-置信度对应原理、Distributional Consistency Guarantee 以及 scaling law 对数学真理的外推，共同构成了稿件最有价值的部分。
+  
+  稿件仍存在笑点过密、部分技术错误过于刻意的问题，因此尚未达到 Fake 最高等级作品所应具有的"几乎可以被误认为真实论文"的伪装效果。但作为 Pre 版本，其整体完成度较高，并能够很好地展示 Fake 的核心评审标准：#strong[优秀的 Fake 不只是提出一个荒诞结论，而是建立一套足够严肃的方法，使荒诞结论看起来像是不可避免地被推导出来。]
+  
+  = 编辑评论
+  <编辑评论>
+  本文最大的贡献不是以 87.3% 的置信度证明了 P = NP，而是建立了一套足以得到这一结论的"排行榜认识论"。从数据泄漏被重新定义为分布一致性，到 scaling law 被用于外推数学真理，文章准确捕捉了 benchmark、SOTA 与"问题已经解决"之间经常被混淆的边界。
+]

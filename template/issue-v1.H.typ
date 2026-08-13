@@ -54,10 +54,10 @@
   height: height,
   fill: fill,
 )
-#let cover_smallbox(it) = block(spacing: 5mm, width: 51mm, h_shrink(
+#let cover_smallbox(it, bg: none) = block(spacing: 5mm, width: 51mm, inset: 2.5mm, fill: bg, h_shrink(
   {
-    set text(size: 11pt, font: font_sans1)
-    set par(leading: 0.38em, justify: false)
+    set text(size: 11pt, font: font_sans1, weight: 600)
+    set par(leading: 0.44em, justify: false)
     it
   },
   max_width: 50mm,
@@ -182,7 +182,7 @@
 
 
 
-#let use_article(ipath) = context {
+#let use_article(ipath, pages: 2) = context {
   pagebreak(weak: true)
   let info_obj = toml(ipath + "/info.toml")
   let page_num = here().page()
@@ -195,16 +195,62 @@
     )
     return (..arr, obj)
   })
-
-  include ipath + "/single.typ"
-  pagebreak(weak: true)
-  // counter(heading).update(())
-  // --- OR ---
-  // We iterate all counters and reset them
-  // Define all element counters you want to clear
-  let targets = (heading, figure, math.equation)
-  for element in targets {
-    counter(element).update(())
+  if false {
+    include ipath + "/single.typ"
+    pagebreak(weak: true)
+    // counter(heading).update(())
+    // --- OR ---
+    // We iterate all counters and reset them
+    // Define all element counters you want to clear
+    let targets = (heading, figure, math.equation)
+    for element in targets {
+      counter(element).update(())
+    }
+  }
+  let __font_sans = ("TeX Gyre Heros", "Noto Sans CJK SC")
+  set par(leading: 0.75em, spacing: 0.95em, justify: true, first-line-indent: 2em)
+  set page(
+    paper: "a4",
+    margin: (top: 15mm, bottom: 20mm, left: 15mm, right: 15mm),
+    footer: [
+      #set text(size: 9pt, font: __font_sans, weight: 500)
+      #context [
+        #block(width: 100%, height: 0.45pt, fill: none)
+        // FAKE JOURNAL~~~~~
+        // #link("https://fakejournal.org/en/articles/" + "dataobj.editor.obj_id" + "/", "")
+        #h(1fr)
+        #counter(page).display()
+      ]
+    ],
+  )
+  for itr_page in range(0, pages) {
+    page(
+      // paper: "a4",
+      // margin: (top: 15mm, bottom: 20mm, left: 15mm, right: 15mm),
+      // // margin: 0mm,
+      // footer: box(width: 100%, inset: 0mm)[
+      //   #let __font_sans = ("TeX Gyre Heros", "Noto Sans CJK SC")
+      //   #set text(size: 9pt, font: __font_sans, weight: 500)
+      //   #context [
+      //     #block(width: 100%, height: 0.45pt, fill: red)
+      //     #hide([FAKE JOURNAL~~~~~])
+      //     #h(1fr)
+      //     #counter(page).display()
+      //   ]
+      // ],
+      background: {
+        let pdf_path = "/_dist/" + ipath + "/single.pdf"
+        place(center + horizon, dy: 0pt, box(width: 100%, height: 100%, image(
+          width: 100%,
+          height: 100%,
+          fit: "cover",
+          pdf_path,
+          page: itr_page + 1,
+        )))
+        place(right+bottom, box(width: 80mm, height: 12.5mm, fill: white.transparentize(0%)))
+      },
+      {},
+    )
   }
 }
 

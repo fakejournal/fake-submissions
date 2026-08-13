@@ -6,7 +6,7 @@
 
 
 ### STEP: Find all non-draft issues
-find pub -type f -name pub.toml | sort -r | while read -r toml_path; do
+find pub -type f -name pub.toml | grep -v /2022/ | sort -r | while read -r toml_path; do
 	if [[ "$(tomlq -r .issue.draft "$toml_path")" == false ]]; then
 		# echo "Good! $toml_path is ok"
 		echo '[[issue]]'

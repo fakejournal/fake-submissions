@@ -4,13 +4,29 @@
 
 #let fake__brand_color = rgb("#FFD390")
 #let __font_serif = (
+  "New Computer Modern",
+  "Latin Modern Roman",
+  "Nimbus Roman",
+  "TeX Gyre Termes",
+  "STIX Two Text",
+  "XCharter",
+  "Libertinus Serif",
+  "Noto Serif CJK SC",
+)
+#let __font_serif_titling = (
+  "STIX Two Text",
+  "TeX Gyre Termes",
+  "Instrument Serif",
+  "New Computer Modern",
   "Latin Modern Roman",
   "XCharter",
   "Libertinus Serif",
-  "TeX Gyre Termes",
   "Noto Serif CJK SC",
 )
-#let __font_sans = ("TeX Gyre Heros", "Noto Sans CJK SC")
+#let __font_sans = (
+  "TeX Gyre Heros",
+  "Noto Sans CJK SC",
+)
 
 
 #let fake_brand_logo_main = [
@@ -51,12 +67,12 @@
   // - This assumes height is monotonic as width shrinks.
   // - Typst measurements are quantized, so `eps` controls precision.
   // - Extremely pathological layouts may not behave perfectly.
-
+  
   // Natural size
   let natural = measure(box(it), width: max_width)
   let target_h = natural.height
   let natural_w = natural.width
-
+  
   // Helper
   // let fits = w => {
   //   measure(box(width: w, it)).height == target_h
@@ -69,57 +85,57 @@
         < 0.01pt
     )
   }
-
+  
   // Trivial case
   if natural_w <= eps {
     return box(width: natural_w, it)
   }
-
+  
   // ------------------------------------------------------------------
   // Phase 1: find lower bound where height increases
   // ------------------------------------------------------------------
-
+  
   let lo = 0pt
   let hi = natural_w
-
+  
   // Exponential descent toward smaller widths.
   // We keep shrinking until height changes.
   let probe = natural_w
-
+  
   while probe > eps and fits(probe) {
     hi = probe
     probe = probe / 2
   }
-
+  
   lo = probe
-
+  
   // If even extremely tiny widths still fit,
   // just return the smallest discovered.
   if fits(lo) {
     return box(width: lo, it)
   }
-
+  
   // ------------------------------------------------------------------
   // Phase 2: binary search
   // invariant:
   //   lo -> DOES NOT fit
   //   hi -> DOES fit
   // ------------------------------------------------------------------
-
+  
   let iter = 0
-
+  
   while iter < max_iter and hi - lo > eps {
     let mid = (lo + hi) / 2
-
+    
     if fits(mid) {
       hi = mid
     } else {
       lo = mid
     }
-
+    
     iter += 1
   }
-
+  
   box(width: hi, it)
 }
 
@@ -131,7 +147,7 @@
 
 #let make_title(input_toml, title_override: none, abstract_content: none) = {
   let dataobj = input_toml
-
+  
   set text(number-width: "tabular")
   set par(first-line-indent: 0em)
   block(width: 100%, spacing: 15mm, [
@@ -142,14 +158,14 @@
     #h(1fr)
     // #dataobj.editor.obj_id
     // #link("https://fakejournal.org/en/articles/" + dataobj.editor.obj_id + "/", dataobj.editor.obj_id)
-
+    
     #v(2mm)
-
+    
     #text(tracking: 0.11em, weight: 600, fill: fake__brand_color.darken(20%), upper(dataobj.editor.category_label))
-
+    
     // #block(width: 100%, height: 0.44pt, fill: gray)
   ])
-
+  
   block(width: 100%, spacing: 10mm, [
     // 1. Article Title
     #block(width: 100%)[
@@ -159,7 +175,7 @@
         __realTitle = title_override
       }
       #show math.equation.where(block: false): it => box(it)
-      #text(size: 23pt, weight: 700, font: __font_serif, h_shrink(max_width: 130mm, __realTitle))
+      #text(size: 23pt, weight: 600, font: __font_serif_titling, h_shrink(max_width: 130mm, __realTitle))
     ]
     #v(9mm)
     #block(width: 100%, {
@@ -173,8 +189,10 @@
           State: #input_toml.editor.state
           #hrule
           Date of Manuscript: #input_toml.editor.date_manuscript.display()
-          #hrule
           #{
+            if input_toml.editor.state != "NewManuscript" {
+              hrule
+            }
             if input_toml.editor.state == "PreAccept" {
               [Date of PreAccept: #input_toml.editor.date_review.display()]
             }
@@ -211,19 +229,21 @@
             )
           ])
           // #v(6mm)
-
+          
           // 3. Affiliations Block
-          #block(width: 100%, {
-            let aff_dict = dataobj.affiliations
-            for (key, aff) in aff_dict [
-              #text(size: 9pt, fill: gray.darken(70%), [
-                #let my_arr = (aff.organization, aff.city, aff.country).filter(it => it != "NULL")
-                #super(key) #my_arr.join([, ])
-              ])
-              #v(0.01mm)
-            ]
-          })
-
+          #if "affiliations" in dataobj {
+            block(width: 100%, {
+              let aff_dict = dataobj.affiliations
+              for (key, aff) in aff_dict [
+                #text(size: 9pt, fill: gray.darken(70%), [
+                  #let my_arr = (aff.organization, aff.city, aff.country).filter(it => it != "NULL")
+                  #super(key) #my_arr.join([, ])
+                ])
+                #v(0.01mm)
+              ]
+            })
+          }
+          
           #if abstract_content != none {
             hrule
             set text(size: 11pt, font: __font_serif)
@@ -233,7 +253,7 @@
       )
     })
     // #v(5mm)
-
+    
     // 4. Modern minimalist separator accent
     // #line(length: 100%, stroke: 0.5pt + gray.lighten(40%))
   ])
@@ -242,7 +262,7 @@
 
 
 #let mode_2col(doc) = {
-  columns(2, gutter: 16pt, doc)
+  block(breakable: true, { columns(2, gutter: 16pt, doc) })
 }
 
 
@@ -273,7 +293,7 @@
   set par(leading: 0.75em, spacing: 0.95em, justify: true, first-line-indent: 2em)
   set table(inset: 4pt, stroke: 0.33pt + black.lighten(20%))
   show table: set par(justify: false)
-
+  
   show heading: it => {
     let dep = it.depth
     let size = (7 - dep) * 1.5pt + 3.5pt
@@ -287,7 +307,7 @@
       #it
     ]
   }
-
+  
   show columns: it => {
     v(20pt, weak: false)
     it
@@ -295,7 +315,7 @@
   }
   import "@preview/cjk-unbreak:0.2.3": remove-cjk-break-space
   show: remove-cjk-break-space
-
+  
   doc
 }
 
@@ -323,7 +343,7 @@
   debug: false,
 ) = context {
   // --- INTERNAL HELPERS ---
-
+  
   // Strip fractional spacing for accurate natural measurement
   let strip-fr-h(it) = {
     if type(it) != content { return it }
@@ -340,7 +360,7 @@
     }
     it
   }
-
+  
   // Extract content from table.header/footer wrappers
   let get-cell-content(it) = {
     if type(it) != content { return (it,) }
@@ -349,26 +369,26 @@
     }
     return (it,)
   }
-
+  
   let probe-col(col-cells) = styling(table(columns: (auto,), ..col-cells))
-
+  
   // --- PREPARATION ---
-
+  
   let flat-cells = cells.map(get-cell-content).flatten()
   let clean-cells = flat-cells.map(strip-fr-h)
-
+  
   let col_specs = if type(columns) == int { range(columns).map(_ => auto) } else { columns }
   let col_count = col_specs.len()
   let natural_widths = ()
-
+  
   if debug [== Debug: Column Probes]
-
+  
   // --- MEASUREMENT LOOP ---
-
+  
   for i in range(col_count) {
     let col_def = col_specs.at(i)
     let w = 0pt
-
+    
     if type(col_def) == length {
       w = col_def
       if debug {
@@ -378,7 +398,7 @@
       let column_cells = range(i, clean-cells.len(), step: col_count).map(idx => clean-cells.at(idx))
       let probe = probe-col(column_cells)
       w = measure(probe).width
-
+      
       if debug {
         block(stroke: red + 0.5pt, inset: 4pt, [
           #probe
@@ -388,24 +408,24 @@
     }
     natural_widths.push(w)
   }
-
+  
   // Calculate overhead to subtract from probes
   let probe_overhead = measure(styling(table(columns: (0pt,), stroke: 0.1pt))).width
   let clean_widths = natural_widths.map(w => if type(w) == length { w } else { w - probe_overhead })
-
+  
   // Calculate final table overhead
   let total_table_overhead = measure(styling(table(columns: col_specs.map(_ => 0pt)))).width
   let sum_clean_natural = clean_widths.sum()
-
+  
   if debug [---]
-
+  
   layout(container_size => {
     let remaining_width = container_size.width - sum_clean_natural - total_table_overhead
-
+    
     let auto_indices = range(col_count).filter(i => col_specs.at(i) == auto)
     let target_count = if auto_indices.len() > 0 { auto_indices.len() } else { col_count }
     let extra_per_col = calc.max(0pt, remaining_width / target_count)
-
+    
     let final_columns = range(col_count).map(i => {
       let base = clean_widths.at(i)
       if col_specs.at(i) == auto or auto_indices.len() == 0 {
@@ -413,14 +433,14 @@
       }
       return base
     })
-
+    
     if debug [== Final Expanded Table]
-
+    
     styling(table(
       columns: final_columns,
       ..cells
     ))
-
+    
     if debug {
       text(size: 8pt, fill: blue)[
         Container: #container_size.width |
@@ -429,4 +449,18 @@
       ]
     }
   })
+}
+
+
+#let review_file_page(it) = {
+  pagebreak(weak: true)
+  let hrule = block(width: 100%, spacing: 4mm, height: 0.45pt, fill: black)
+  set text(font: __font_serif)
+  set par(first-line-indent: 0em)
+  block(width: 100%, {
+    set text(size: 19pt, weight: 500, font: __font_sans)
+    [Editorial Review Comment]
+  })
+  hrule
+  it
 }

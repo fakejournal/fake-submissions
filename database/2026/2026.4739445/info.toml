@@ -5,9 +5,9 @@ state = "PreAccept"
 date_manuscript = 2026-08-08
 date_review = 2026-08-08
 date_accept = 2026-08-08
-date_print = 1980-01-01
-# issue_serial = "1"
-# issue_volume = "2026.01"
+date_print = 2026-08-08
+issue_serial = "1"
+issue_volume = "2026.01"
 year = "2026"
 month = "08"
 

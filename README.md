@@ -1,6 +1,5 @@
-# Fake 期刊投稿审阅系统
+# Fake Journal Publication Workspace
 
-建设中……
-
+Submit article here: https://fakejournal.org/en/submit/
 
 

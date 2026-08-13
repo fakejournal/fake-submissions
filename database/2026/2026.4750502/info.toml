@@ -1,0 +1,31 @@
+[editor]
+obj_id = "2026.4750502"
+category_label = "Research"
+state = "NewManuscript"
+date_manuscript = 2026-08-08
+date_review = 1980-01-01
+date_accept = 1980-01-01
+date_print = 1980-01-01
+# issue_serial = "1"
+# issue_volume = "2026.01"
+year = "2026"
+month = "08"
+
+
+
+[article]
+
+title = """
+Desktop Mouse Use Shifts Masturbation Handedness Through Task Competition
+"""
+abstract = """
+Traditional explanations of hand preference emphasize stable motor dominance and innate manual specialization. However, such models may not adequately explain why a subset of consistently right-handed men preferentially use their left hand during masturbation. The present study examines the Competition-Induced Handedness Separation Hypothesis, which proposes that this behavioral pattern emerges from early motor-resource competition rather than reduced right-hand dominance. Specifically, the study assumes that during early masturbation experiences, many right-handed individuals simultaneously engaged in computer-based activities that required operation of a computer mouse with the dominant right hand. Because mouse control was perceived as the higher-priority task, the lower-priority task of genital stimulation was delegated to the left hand. Repeated exposure to this dual-task environment may have resulted in a persistent motor habit that remained stable even after the original environmental conditions disappeared.
+"""
+
+
+[[author]]
+full_name = "Neruthes"
+index_name = "N."
+email = "neruthes@outlook.com"
+corresponding = true
+affiliations = [ ]

@@ -35,6 +35,16 @@ case $1 in
 				;;
 		esac
 		;;
+    all )
+        ### Exact numbers need to be updated frequently
+        find database/2026 -name single.typ | while read -r line; do
+            w= ./make.sh "$line" &
+        done
+        wait
+        ;;
+    pub/*/*/cover-*-raw.jpg )
+        bash _utils/magick-cover.sh "$1"
+        ;;
 	_dist/database/*/_cover.pdf )
 		pdftoppm -r 150 -png -singlefile "$1" "$1"
 		du -h "$(realpath "$1.png")"
