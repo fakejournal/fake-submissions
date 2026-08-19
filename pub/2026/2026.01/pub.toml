@@ -3,7 +3,7 @@ issue_serial = "0"
 issue_volume = "2026.01"
 year = "2026"
 subclass = ""
-editors = "Physhan|Neruthes"
+editors = "Physhan|Neruthes|Assassinlike"
 draft = false
 
 cover_story_title = """P = NP in the Era of Large Language Models: An Empirical Resolution via Benchmark Saturation (Confidence: 87.3%)"""

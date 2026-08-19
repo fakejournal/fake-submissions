@@ -4,9 +4,9 @@
 
 #let fake__brand_color = rgb("#FFD390")
 #let __font_serif = (
+  "Nimbus Roman",
   "New Computer Modern",
   "Latin Modern Roman",
-  "Nimbus Roman",
   "TeX Gyre Termes",
   "STIX Two Text",
   "XCharter",

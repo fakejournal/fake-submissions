@@ -8,8 +8,6 @@
 
 
 
-
-
 // BEGIN PROCESS DATA
 
 // Extract dynamic statistical properties
@@ -783,6 +781,7 @@
     == Environmental Constraints as Drivers of Behavioral Asymmetry
     Historically, handedness research has focused on genetic and intrinsic neurological determinants. Our results suggest that external tool ergonomics and environmental constraints act as potent extrinsic directors of lateralized behavior. In modern digital environments, asymmetric device interfaces force asymmetrical biomechanical allocations. The high cognitive and fine-motor demand of dominant-hand cursor navigation imposes an opportunity cost on that hand, driving compensatory recruitment of the ipsilateral motor cortex for concurrent tasks.
     
+    #colbreak()
     == Methodological Considerations and Limitations
     While these results demonstrate robust statistical association ($p #if float(p_value) < 0.001 [< 0.001] else [= #fmt(p_value, digits: 4)]$), several methodological constraints must be contextualized:
     
